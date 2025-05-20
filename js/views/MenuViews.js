@@ -1,4 +1,4 @@
-function toggleDropdown() {
+function toggleMenuDropdown() {
   const menu = document.getElementById("dropdownMenu");
   menu.classList.toggle("hidden");
 }
