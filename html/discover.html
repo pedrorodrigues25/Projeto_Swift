@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discover - Swift</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/discover.css" />
+  <link rel="stylesheet" href="/css/menu.css">
+
+</head>
+<body>
+  <header>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="/html/home.html">Home</a>
+      <a href="/html/flights.html">Flights</a>
+    </div>
+    <img src="/assets/img/logoE.png" alt="Swift logo" class="logo">
+    <div class="nav-right">
+      <a href="/html/discover.html">Discover</a>
+      <a href="/html/review.html">Reviews</a>
+
+      <!-- ENVOLVENDO O MENU E O ÍCONE -->
+      <div class="menu-wrapper">
+        <div class="menu-icon" onclick="toggleMenuDropdown()">☰</div>
+        <div class="dropdown-menu hidden" id="dropdownMenu">
+          <ul>
+            <li>
+              <span>Your flights</span>
+              <img src="/assets/img/iconFlights.png" alt="Your flights icon">
+            </li>
+            <li>
+              <span>Liked Destinations</span>
+              <img src="/assets/img/like.png" alt="Liked destinations icon">
+            </li>
+            <li>
+              <a href="#"><span>Log in</span></a>
+              <img src="/assets/img/login.png" alt="Login icon">
+            </li>
+            <li>
+              <span>Account</span>
+              <img src="/assets/img/people.png" alt="Account icon">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <main class="discover-page">
+    <h1 class="title">Discover</h1>
+
+    <section class="destination paris">
+      <img src="/assets/img/parisBanner.png" alt="Paris" />
+    </section>
+
+    <section class="destination-text london">
+      <img src="/assets/img/london.png" alt="London"/>
+      <div class="text">
+        <h3>London</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </section>
+
+    <section class="quiz-section">
+      <div class="quiz-box">
+        <div class="quiz-content">
+          <h4>Quiz</h4>
+          <h2>Greece</h2>
+          <button class="play-btn">Play</button>
+        </div>
+        <img src="/assets/img/greeceC.png" alt="Greece">
+        <div class="miles-box">
+          <p>Get the chance to win</p>
+          <h3>100<br><span>miles</span></h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="destination-text la">
+      <img src="/assets/img/losangelesC.png" alt="Los Angeles" />
+      <div class="text">
+        <h3>Los Angels</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="/assets/img/logo.png" alt="Swift logo" class="logo">
+    <div>Email: <p>caldas@swift.com</p></div>
+    <div>Location: <p>Porto</p></div>
+    <div>Contact: <p>+351 903510863</p></div>
+  </footer>
+
+  <script src="/js/views/MenuViews.js"></script>
+  
+</body>
+</html>
