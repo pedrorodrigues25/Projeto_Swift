@@ -44,14 +44,34 @@ export function getUserLogged() {
 }
 
 /**
- * CLASSE QUE MODELA UM UTILIZADOR NA APLICAÇÃO
+ * CLASSE QUE MODELO UM UTILIZADOR NA APLICAÇÃO
  */
 class User {
+  userId = "";
   username = "";
   password = "";
+  email = "";
+  coverPhoto = "";
+  birthDate = "";
+  quizzes = [
+    quiz = {
+      idQuiz: "",
+      correctAnswers: "",
+      quizMiles: ""
+    }
+  ]
 
-  constructor(username, password) {
+
+  constructor(userId, username, password, email, coverPhoto, birthDate, quizzes) {
+    this.userId = userId;
     this.username = username;
     this.password = password;
+    this.email = email;
+    this.coverPhoto = coverPhoto;
+    this.birthDate = birthDate;
+    this.quizzes = quizzes;
   }
 }
+
+
+
