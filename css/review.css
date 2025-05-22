@@ -75,4 +75,141 @@ footer div {
   vertical-align: middle;
 }
 
+.reviews-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px;
+}
+
+.review-form h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.review-form h3 {
+  font-size: 18px;
+  color: #001542;
+  margin: 20px 0 10px;
+}
+
+.input-text, .input-textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #001542;
+  border-radius: 10px;
+}
+
+.input-textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.rating-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.rating-icons {
+  font-size: 20px;
+}
+
+.tag-box span {
+  background: #ffcf00;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.btn-add {
+  background: #ffcf00;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.filters input, .filters select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.review-card {
+  display: flex;
+  gap: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.review-user {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.user-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.review-content {
+  flex: 1;
+}
+
+.review-content h4 {
+  margin: 0;
+}
+
+.review-date {
+  font-size: 12px;
+  color: gray;
+}
+
+.review-text {
+  margin: 10px 0;
+}
+
+.btn-read {
+  background: #001542;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.review-images img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin: 5px;
+}
+
+.city-dropdown {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 15px;
+  border: 1px solid #001542;
+  border-radius: 10px;
+  background-color: #fdfdfd;
+  color: #001542;
+  margin-bottom: 15px;
+}
+
 

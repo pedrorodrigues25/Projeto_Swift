@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="/css/menu.css" />
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <nav class="navbar">
       <div class="nav-left">
@@ -19,7 +21,7 @@
         <a href="/html/discover.html">Discover</a>
         <a href="/html/review.html">Reviews</a>
         <div class="menu-wrapper">
-        <div class="menu-icon" onclick="toggleMenuDropdown()">☰</div>
+          <div class="menu-icon" onclick="toggleMenuDropdown()">☰</div>
           <div class="dropdown-menu hidden" id="dropdownMenu">
             <ul>
               <li><span>Your flights</span><img src="/assets/img/iconFlights.png"></li>
@@ -33,7 +35,62 @@
     </nav>
   </header>
 
-  
+  <!-- Conteúdo principal -->
+  <main class="container">
+    <h1>Reviews</h1>
+
+    <!-- <section class="review-form">
+      <h3>Leave your mark and give a review</h3>
+      <form id="newReviewForm">
+        <select id="citySelect" class="city-dropdown" required>
+          <option value="">Select a destination</option>
+          <option value="paris">Paris</option>
+          <option value="porto">Porto</option>
+          <option value="rome">Rome</option>
+          <option value="newyork">New York</option>
+          <option value="tokyo">Tokyo</option>
+        </select>
+
+        <textarea id="reviewText" placeholder="Add your mark" required></textarea>
+
+        <div class="rating-section">
+          <label for="rating">Rating:</label>
+          <select id="rating" required>
+            <option value="">--</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+          </select>
+        </div>
+
+        <button type="submit" class="add-btn">Add</button>
+      </form>
+    </section> -->
+
+    <!-- Filtros -->
+    <section class="review-filters">
+      <h3>The stories of our swifters</h3>
+      <div class="filters">
+        <span>Destination: <input type="text" placeholder="e.g Paris" /></span>
+        <span>Date: <input type="date" value="2025-05-17" /></span>
+        <span>Order: 
+          <select>
+            <option>Most Recent</option>
+            <option>Oldest</option>
+          </select>
+        </span>
+      </div>
+    </section>
+
+    <!-- Lista de reviews -->
+    <section class="review-list" id="reviewList">
+      <!-- JS vai inserir os reviews aqui -->
+    </section>
+  </main>
+
+  <!-- footer -->
   <footer>
     <img src="/assets/img/logo.png" alt="Swift logo" class="logo">
     <div>Email: <p>caldas@swift.com</p></div>
@@ -41,6 +98,9 @@
     <div>Contact: <p>+351 903510863</p></div>
   </footer>
 
+  <!-- Scripts -->
   <script src="/js/views/MenuViews.js"></script>
+  <script src="/js/views/ReviewsModel.js"></script>
+  <script src="/js/views/ReviewsViews.js"></script>
 </body>
 </html>
