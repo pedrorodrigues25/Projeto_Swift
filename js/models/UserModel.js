@@ -1,25 +1,36 @@
-let users;
+let users = [];
 
-// CARREGAR UTILIZADORES DA LOCALSTORAGE
+// Inicializa a lista de usuários a partir da localStorage
 export function init() {
   users = localStorage.users ? JSON.parse(localStorage.users) : [];
 }
 
-// ADICIONAR UTILIZADOR
-export function add(username, password) {
-  if (users.some((user) => user.username === username)) {
-    throw Error(`User with username "${username}" already exists!`);
-  } else {
-    users.push(new User(username, password));
-    localStorage.setItem("users", JSON.stringify(users));
+// Adiciona novo utilizador com todos os dados
+export function addUser(userData) {
+  if (users.some((user) => user.username === userData.username)) {
+    throw Error(`User with username "${userData.username}" already exists!`);
   }
+
+  const newUser = new User(
+    userData.userId,
+    userData.username,
+    userData.password,
+    userData.email,
+    userData.coverPhoto,
+    userData.birthDate,
+    []
+  );
+
+  users.push(newUser);
+  localStorage.setItem("users", JSON.stringify(users));
 }
 
-// LOGIN DO UTILIZADOR
+// Autentica o utilizador
 export function login(username, password) {
   const user = users.find(
     (user) => user.username === username && user.password === password
   );
+
   if (user) {
     sessionStorage.setItem("loggedUser", JSON.stringify(user));
     return true;
@@ -28,41 +39,24 @@ export function login(username, password) {
   }
 }
 
-// LOGOUT DO UTILIZADOR
+// Termina sessão
 export function logout() {
   sessionStorage.removeItem("loggedUser");
 }
 
-// VERIFICA EXISTÊNCIA DE ALGUÉM AUTENTICADO
+// Verifica se alguém está autenticado
 export function isLogged() {
-  return sessionStorage.getItem("loggedUser") ? true : false;
+  return !!sessionStorage.getItem("loggedUser");
 }
 
-// DEVOLVE UTILZIADOR AUTENTICADO
+// Retorna o utilizador autenticado
 export function getUserLogged() {
   return JSON.parse(sessionStorage.getItem("loggedUser"));
 }
 
-/**
- * CLASSE QUE MODELO UM UTILIZADOR NA APLICAÇÃO
- */
+// Classe User com estrutura completa
 class User {
-  userId = "";
-  username = "";
-  password = "";
-  email = "";
-  coverPhoto = "";
-  birthDate = "";
-  quizzes = [
-    quiz = {
-      idQuiz: "",
-      correctAnswers: "",
-      quizMiles: ""
-    }
-  ]
-
-
-  constructor(userId, username, password, email, coverPhoto, birthDate, quizzes) {
+  constructor(userId, username, password, email, coverPhoto, birthDate, quizzes = []) {
     this.userId = userId;
     this.username = username;
     this.password = password;
