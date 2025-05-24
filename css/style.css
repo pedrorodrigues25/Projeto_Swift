@@ -264,19 +264,25 @@ header {
 }
 
 .signup-btn {
-  padding: 10px 20px;
+  display: inline-block;
+  padding: 12px 32px;
+  background: #276468;
+  color: #FFB30D;
   border: none;
   border-radius: 25px;
-  background-color: #004aad;
-  color: white;
-  font-size: 14px;
+  font-size: 1.1rem;
   font-weight: bold;
+  text-decoration: none; 
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.signup-btn:hover {
-  background-color: #003b92;
+.signup-btn:hover,
+.signup-btn:focus {
+  background: #ffe066;
+  color: #111;
+  text-decoration: none;
 }
 
 /* Offers */
