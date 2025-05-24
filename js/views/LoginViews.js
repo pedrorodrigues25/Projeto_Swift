@@ -24,3 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.querySelector('.close-btn').onclick = function() {
+    window.location.href = '/index.html';
+};
