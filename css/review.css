@@ -54,6 +54,41 @@ header {
 
 }
 
+/* rating */
+
+.rating-box {
+  position: relative;
+  background: #fff;
+  border-radius: 25px;
+  padding: 25px 50px 35px;
+  box-shadow: rgba(0, 0, 0, 0.05);
+}
+
+.rating-box h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #dadada;
+  font-weight: 500;
+}
+
+.rating-box .stars {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.bird {
+  width: 35px;
+  height: 35px;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.bird.active {
+  opacity: 1;
+  filter: drop-shadow(0 0 2px #ff9c1a);
+}
 
 
 /* FOOTER */
