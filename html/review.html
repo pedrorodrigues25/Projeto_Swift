@@ -39,19 +39,26 @@
   </header>
 
   <!-- Secção de Reviews -->
-  <section class="review-section" style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
-    <h2 style="margin-bottom: 20px;">Leave your mark and give a review</h2>
+  <section class="review-section">
+    <h2>Leave your mark and give a review</h2>
 
-    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-      <div style="flex: 1; min-width: 250px;">
-        <label for="city"><strong>City / Country</strong></label>
-        <input type="text" id="city" placeholder="e.g. Paris" style="width: 100%; padding: 10px; border-radius: 10px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc;" />
+    <div class="review-form">
+      <div class="form-inputs">
+        <div class="input-group">
+          <label for="city"><strong>City / Country</strong></label>
+          <select id="city" class="dropdown-select">
+            <option value="">Choose a destination</option>
+            <!-- Options via JS -->
+          </select>
+        </div>
 
-        <label for="review"><strong>Write your review</strong></label>
-        <textarea id="review" placeholder="Add your mark" rows="5" style="width: 100%; padding: 10px; border-radius: 10px; margin-top: 5px; border: 1px solid #ccc;"></textarea>
+        <div class="input-group">
+          <label for="review"><strong>Write your review</strong></label>
+          <textarea id="review" placeholder="Add your mark" rows="5"></textarea>
+        </div>
       </div>
 
-      <div class="rating-box" style="flex: 1; min-width: 250px;">
+      <div class="rating-box">
         <h1>Rating</h1>
         <div class="stars">
           <img src="/assets/img/birdreview.png" class="bird" />
@@ -61,13 +68,12 @@
           <img src="/assets/img/birdreview.png" class="bird" />
         </div>
 
-        <div style="margin-top: 20px;">
-          <button class="add-btn" style="padding: 10px 25px; background: #ffb200; color: white; border: none; border-radius: 10px; cursor: pointer;">Add</button>
+        <div>
+          <button class="add-btn">Add</button>
         </div>
       </div>
     </div>
 
-    <!-- Aqui aparecem os cards das reviews -->
     <div class="review-list"></div>
   </section>
 

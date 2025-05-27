@@ -13,6 +13,37 @@ birds.forEach((bird, index1) => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const citySelect = document.getElementById('city');
+
+  const destinations = [
+    { city: "Paris", country: "France" },
+    { city: "Lisbon", country: "Portugal" },
+    { city: "Rome", country: "Italy" },
+    { city: "London", country: "UK" },
+    { city: "Tokyo", country: "Japan" },
+    { city: "New York", country: "USA" }
+  ];
+
+  destinations.forEach(dest => {
+    const option = document.createElement('option');
+    option.value = `${dest.city}, ${dest.country}`;
+    option.textContent = `${dest.city}, ${dest.country}`;
+    citySelect.appendChild(option);
+  });
+
+  // Rating interaction (bonus)
+  const birds = document.querySelectorAll('.bird');
+  birds.forEach((bird, index) => {
+    bird.addEventListener('click', () => {
+      birds.forEach((b, i) => {
+        b.classList.toggle('active', i <= index);
+      });
+    });
+  });
+});
+
+
 // Submissão do formulário
 const addBtn = document.querySelector(".add-btn");
 const cityInput = document.getElementById("city");
