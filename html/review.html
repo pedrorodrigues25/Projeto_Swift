@@ -4,63 +4,74 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reviews - Swift</title>
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="/css/review.css" />
   <link rel="stylesheet" href="/css/menu.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 </head>
 <body>
+  <!-- Header / Menu -->
   <header>
-  <nav class="navbar">
-    <div class="nav-left">
-      <a href="/html/home.html">Home</a>  
-      <a href="/html/flights.html">Flights</a>
-    </div>
-    <img src="/assets/img/logoE.png" alt="Swift logo" class="logo">
-    <div class="nav-right">
-      <a href="/html/discover.html">Discover</a>
-      <a href="/html/review.html">Reviews</a>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/html/home.html">Home</a>  
+        <a href="/html/flights.html">Flights</a>
+      </div>
+      <img src="/assets/img/logoE.png" alt="Swift logo" class="logo">
+      <div class="nav-right">
+        <a href="/html/discover.html">Discover</a>
+        <a href="/html/review.html">Reviews</a>
 
-      <!-- ENVOLVENDO O MENU E O ÍCONE -->
-      <div class="menu-wrapper">
-        <div class="menu-icon" onclick="toggleMenuDropdown()">☰</div>
-        <div class="dropdown-menu hidden" id="dropdownMenu">
-          <ul>
-            <li>
-              <span>Your flights</span>
-              <img src="/assets/img/iconFlights.png" alt="Your flights icon">
-            </li>
-            <li>
-              <span>Liked Destinations</span>
-              <img src="/assets/img/like.png" alt="Liked destinations icon">
-            </li>
-            <li>
-              <a href="/html/login.html"><span>Log in</span></a>
-              <img src="/assets/img/login.png" alt="Login icon">
-            </li>
-            <li>
-              <span>Account</span>
-              <img src="/assets/img/people.png" alt="Account icon">
-            </li>
-          </ul>
+        <div class="menu-wrapper">
+          <div class="menu-icon" onclick="toggleMenuDropdown()">☰</div>
+          <div class="dropdown-menu hidden" id="dropdownMenu">
+            <ul>
+              <li><span>Your flights</span><img src="/assets/img/iconFlights.png" alt="Your flights icon"></li>
+              <li><span>Liked Destinations</span><img src="/assets/img/like.png" alt="Liked destinations icon"></li>
+              <li><a href="/html/login.html"><span>Log in</span></a><img src="/assets/img/login.png" alt="Login icon"></li>
+              <li><span>Account</span><img src="/assets/img/people.png" alt="Account icon"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Secção de Reviews -->
+  <section class="review-section" style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+    <h2 style="margin-bottom: 20px;">Leave your mark and give a review</h2>
+
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 250px;">
+        <label for="city"><strong>City / Country</strong></label>
+        <input type="text" id="city" placeholder="e.g. Paris" style="width: 100%; padding: 10px; border-radius: 10px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc;" />
+
+        <label for="review"><strong>Write your review</strong></label>
+        <textarea id="review" placeholder="Add your mark" rows="5" style="width: 100%; padding: 10px; border-radius: 10px; margin-top: 5px; border: 1px solid #ccc;"></textarea>
+      </div>
+
+      <div class="rating-box" style="flex: 1; min-width: 250px;">
+        <h1>Rating</h1>
+        <div class="stars">
+          <img src="/assets/img/birdreview.png" class="bird" />
+          <img src="/assets/img/birdreview.png" class="bird" />
+          <img src="/assets/img/birdreview.png" class="bird" />
+          <img src="/assets/img/birdreview.png" class="bird" />
+          <img src="/assets/img/birdreview.png" class="bird" />
+        </div>
+
+        <div style="margin-top: 20px;">
+          <button class="add-btn" style="padding: 10px 25px; background: #ffb200; color: white; border: none; border-radius: 10px; cursor: pointer;">Add</button>
         </div>
       </div>
     </div>
-  </nav>
-</header>
 
- <div class="rating-box">
-  <h1>Rating</h1>
-  <div class="stars">
-    <img src="/assets/img/birdreview.png" class="bird" />
-    <img src="/assets/img/birdreview.png" class="bird" />
-    <img src="/assets/img/birdreview.png" class="bird" />
-    <img src="/assets/img/birdreview.png" class="bird" />
-    <img src="/assets/img/birdreview.png" class="bird" />
-  </div>
-</div>
+    <!-- Aqui aparecem os cards das reviews -->
+    <div class="review-list"></div>
+  </section>
 
-
-  
+  <!-- Footer -->
   <footer>
     <img src="/assets/img/logo.png" alt="Swift logo" class="logo">
     <div>Email: <p>caldas@swift.com</p></div>
@@ -68,6 +79,7 @@
     <div>Contact: <p>+351 903510863</p></div>
   </footer>
 
+  <!-- Scripts -->
   <script src="/js/views/MenuViews.js"></script>
   <script type="module" src="/js/views/ReviewViews.js"></script>
 </body>
