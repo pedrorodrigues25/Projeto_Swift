@@ -1,36 +1,25 @@
-let users = [];
+let users;
 
-// Inicializa a lista de usuários a partir da localStorage
+// CARREGAR UTILIZADORES DA LOCALSTORAGE
 export function init() {
   users = localStorage.users ? JSON.parse(localStorage.users) : [];
 }
 
-// Adiciona novo utilizador com todos os dados
-export function addUser(userData) {
-  if (users.some((user) => user.username === userData.username)) {
-    throw Error(`User with username "${userData.username}" already exists!`);
+// ADICIONAR UTILIZADOR
+export function add(username, password) {
+  if (users.some((user) => user.username === username)) {
+    throw Error(`User with username "${username}" already exists!`);
+  } else {
+    users.push(new User(username, password));
+    localStorage.setItem("users", JSON.stringify(users));
   }
-
-  const newUser = new User(
-    userData.userId,
-    userData.username,
-    userData.password,
-    userData.email,
-    userData.coverPhoto,
-    userData.birthDate,
-    []
-  );
-
-  users.push(newUser);
-  localStorage.setItem("users", JSON.stringify(users));
 }
 
-// Autentica o utilizador
+// LOGIN DO UTILIZADOR
 export function login(username, password) {
   const user = users.find(
     (user) => user.username === username && user.password === password
   );
-
   if (user) {
     sessionStorage.setItem("loggedUser", JSON.stringify(user));
     return true;
@@ -39,30 +28,54 @@ export function login(username, password) {
   }
 }
 
-// Termina sessão
+// LOGOUT DO UTILIZADOR
 export function logout() {
   sessionStorage.removeItem("loggedUser");
 }
 
-// Verifica se alguém está autenticado
+// VERIFICA EXISTÊNCIA DE ALGUÉM AUTENTICADO
 export function isLogged() {
-  return !!sessionStorage.getItem("loggedUser");
+  return sessionStorage.getItem("loggedUser") ? true : false;
 }
 
-// Retorna o utilizador autenticado
+// DEVOLVE UTILZIADOR AUTENTICADO
 export function getUserLogged() {
   return JSON.parse(sessionStorage.getItem("loggedUser"));
 }
 
-// Classe User com estrutura completa
+
+/**
+ * CLASSE QUE MODELO UM UTILIZADOR NA APLICAÇÃO
+ */
 class User {
-  constructor(userId, username, password, email, coverPhoto, birthDate, quizzes = []) {
+  userId = "";
+  username = "";
+  password = "";
+  email = "";
+  coverPhoto = "";
+  birthDate = "";
+  phoneNumber = "";
+  defaultPaymentMethod = "";
+  gender = "";
+  quizzes = [
+    quiz = {
+      idQuiz: "",
+      correctAnswers: "",
+      quizMiles: ""
+    }
+  ]
+
+
+  constructor(userId, username, password, email, coverPhoto, birthDate, phoneNumber, defaultPaymentMethod, gender, quizzes) {
     this.userId = userId;
     this.username = username;
     this.password = password;
     this.email = email;
     this.coverPhoto = coverPhoto;
     this.birthDate = birthDate;
+    this.phoneNumber = phoneNumber;
+    this.defaultPaymentMethod = defaultPaymentMethod;
+    this.gender = gender;
     this.quizzes = quizzes;
   }
 }
