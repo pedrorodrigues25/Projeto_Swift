@@ -1,21 +1,21 @@
 let users;
 
-// CARREGAR UTILIZADORES DA LOCALSTORAGE
+// Inicializar utilizadores da LocalStorage
 export function init() {
   users = localStorage.users ? JSON.parse(localStorage.users) : [];
 }
 
-// ADICIONAR UTILIZADOR
-export function add(username, password) {
+// Adicionar novo utilizador
+export function add(userId, username, password, email, coverPhoto = '', birthDate = '', phoneNumber = '', defaultPaymentMethod = '', gender = '', quizzes = []) {
   if (users.some((user) => user.username === username)) {
     throw Error(`User with username "${username}" already exists!`);
-  } else {
-    users.push(new User(username, password));
-    localStorage.setItem("users", JSON.stringify(users));
   }
+
+  users.push(new User(userId, username, password, email, coverPhoto, birthDate, phoneNumber, defaultPaymentMethod, gender, quizzes));
+  localStorage.setItem("users", JSON.stringify(users));
 }
 
-// LOGIN DO UTILIZADOR
+// Login do utilizador
 export function login(username, password) {
   const user = users.find(
     (user) => user.username === username && user.password === password
@@ -28,21 +28,20 @@ export function login(username, password) {
   }
 }
 
-// LOGOUT DO UTILIZADOR
+// Logout
 export function logout() {
   sessionStorage.removeItem("loggedUser");
 }
 
-// VERIFICA EXISTÊNCIA DE ALGUÉM AUTENTICADO
+// Verifica se alguém está autenticado
 export function isLogged() {
   return sessionStorage.getItem("loggedUser") ? true : false;
 }
 
-// DEVOLVE UTILZIADOR AUTENTICADO
+// Devolve o utilizador autenticado
 export function getUserLogged() {
   return JSON.parse(sessionStorage.getItem("loggedUser"));
 }
-
 
 /**
  * CLASSE QUE MODELO UM UTILIZADOR NA APLICAÇÃO

@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const success = userModel.login(username, password);
       if (success) {
         alert('Login successful!');
-        // Redirecionar ou atualizar UI
+        window.location.href = "/html/account.html"; // Redirecionar para página da conta
       }
     } catch (error) {
       alert(error.message);
@@ -26,5 +26,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.querySelector('.close-btn').onclick = function() {
-    window.location.href = '/index.html';
+  window.location.href = '/index.html';
 };

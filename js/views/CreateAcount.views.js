@@ -15,15 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = document.getElementById('password').value.trim();
 
     const userId = crypto.randomUUID();
-    const birthDate = ''; // Pode ser preenchido futuramente
     const coverPhoto = '';
+    const birthDate = '';
+    const phoneNumber = '';
+    const defaultPaymentMethod = '';
+    const gender = '';
     const quizzes = [];
 
     try {
-      userModel.add(username, password);
-      // Como `add()` aceita só username e password, você pode estender no modelo se quiser salvar tudo
+      userModel.add(userId, username, password, email, coverPhoto, birthDate, phoneNumber, defaultPaymentMethod, gender, quizzes);
       alert('Account created! You can now log in.');
-      window.location.href = 'login.html'; // redirecionar após cadastro
+      window.location.href = 'login.html';
     } catch (err) {
       alert(err.message);
     }
