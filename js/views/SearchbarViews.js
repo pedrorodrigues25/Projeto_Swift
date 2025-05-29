@@ -84,3 +84,86 @@ function selectClass(className) {
 function performSearch() {
   alert('Search triggered!');
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const today = new Date().toISOString().split('T')[0];
+  const departureInput = document.getElementById('departure-picker');
+  const arrivalInput = document.getElementById('arrival-picker');
+  
+
+  // Limita a datas futuras
+  departureInput.setAttribute('min', today);
+  arrivalInput.setAttribute('min', today);
+
+  // Eventos de mudança
+  departureInput.addEventListener('change', function () {
+    const formatted = formatDate(this.value);
+    document.getElementById('selected-departure').textContent = formatted;
+    closeAllDropdowns();
+  });
+
+  arrivalInput.addEventListener('change', function () {
+    const formatted = formatDate(this.value);
+    document.getElementById('selected-arrival').textContent = formatted;
+    closeAllDropdowns();
+  });
+
+  window.toggleDropdown = function(id) {
+    closeAllDropdowns();
+    const dropdown = document.getElementById(id);
+    if (dropdown.style.display === "none") {
+      dropdown.style.display = "block";
+    } else {
+      dropdown.style.display = "none";
+    }
+  };
+
+  window.closeAllDropdowns = function () {
+    document.querySelectorAll('.dropdown').forEach(el => el.style.display = 'none');
+  };
+
+  function formatDate(dateStr) {
+    const date = new Date(dateStr);
+    const options = { day: 'numeric', month: 'short', year: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Eventos de abertura de dropdowns
+  document.getElementById('whereto-toggle').addEventListener('click', () => toggleDropdown('whereto-dropdown'));
+  document.getElementById('departure-toggle').addEventListener('click', () => toggleDropdown('departure-dropdown'));
+  document.getElementById('arrival-toggle').addEventListener('click', () => toggleDropdown('arrival-dropdown'));
+  document.getElementById('travelers-toggle').addEventListener('click', () => toggleDropdown('travelers-dropdown'));
+  document.getElementById('class-toggle').addEventListener('click', () => toggleDropdown('class-dropdown'));
+
+  // Eventos nos botões de contar pessoas
+  document.querySelectorAll('.count-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.getAttribute('data-type');
+      const change = parseInt(btn.getAttribute('data-change'));
+      updateCount(type, change);
+    });
+  });
+
+  // Botão Done dos viajantes
+  document.getElementById('travelers-done').addEventListener('click', finalizeTravelers);
+
+  // Opções de classe
+  document.querySelectorAll('.class-option').forEach(option => {
+    option.addEventListener('click', () => {
+      selectClass(option.getAttribute('data-class'));
+      closeAllDropdowns();
+    });
+  });
+
+  document.querySelectorAll('.destination-option').forEach(option => {
+  option.addEventListener('click', () => {
+    const destination = option.getAttribute('data-destination');
+    document.getElementById('selected-destination').textContent = destination;
+    closeAllDropdowns();
+  });
+});
+
+  // Botão de pesquisa
+  document.getElementById('search-btn').addEventListener('click', performSearch);
+});

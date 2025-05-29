@@ -1,3 +1,5 @@
+// /js/views/AccountView.js
+
 import { getUserLogged, logout, isLogged } from '/js/models/UserModel.js';
 
 document.addEventListener('DOMContentLoaded', () => {

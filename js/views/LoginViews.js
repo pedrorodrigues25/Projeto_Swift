@@ -1,3 +1,5 @@
+// /js/views/LoginViews.js
+
 import * as userModel from '/js/models/UserModel.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const success = userModel.login(username, password);
       if (success) {
         alert('Login successful!');
-        window.location.href = "/html/account.html"; // Redirecionar para página da conta
+        window.location.href = '/html/account.html'; // Redireciona para a conta
       }
     } catch (error) {
       alert(error.message);

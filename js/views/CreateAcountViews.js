@@ -1,3 +1,5 @@
+// /js/views/CreateAccount.views.js
+
 import * as userModel from '/js/models/UserModel.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,17 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = document.getElementById('password').value.trim();
 
     const userId = crypto.randomUUID();
-    const coverPhoto = '';
-    const birthDate = '';
-    const phoneNumber = '';
-    const defaultPaymentMethod = '';
-    const gender = '';
-    const quizzes = [];
 
     try {
-      userModel.add(userId, username, password, email, coverPhoto, birthDate, phoneNumber, defaultPaymentMethod, gender, quizzes);
+      userModel.add(
+        userId,
+        username,
+        password,
+        email,
+        '',     // coverPhoto
+        '',     // birthDate
+        '',     // phoneNumber
+        '',     // defaultPaymentMethod
+        '',     // gender
+        []      // quizzes
+      );
       alert('Account created! You can now log in.');
-      window.location.href = 'login.html';
+      window.location.href = '/html/login.html';
     } catch (err) {
       alert(err.message);
     }
