@@ -54,85 +54,99 @@
     <h2>Find your next trip</h2>
     <div class="search-bar">
 
-        <!-- Where to -->
-        <div class="input-box">
-          <img src="/assets/img/location.png" alt="Where to">
-          <div>
-            <span class="input-title">Where to:</span>
-            <span class="input-value">e.g Paris</span>
-          </div>
+      <!-- Where to -->
+      <div class="input-box dropdown-wrapper" id="whereto-toggle">
+        <img src="/assets/img/location.png" alt="Where to">
+        <div>
+          <span class="input-title">Where to:</span>
+          <span class="input-value" id="selected-destination">e.g Paris</span>
         </div>
 
-        <!-- Departure -->
-        <div class="input-box">
-          <img src="/assets/img/plane.png" alt="Departure">
-          <div>
-            <span class="input-title">Departure</span>
-            <span class="input-value">17 May 2025</span>
-          </div>
+        <div class="dropdown" id="whereto-dropdown" style="display: none;">
+          <div class="destination-option" data-destination="Paris">Paris</div>
+          <div class="destination-option" data-destination="London">London</div>
+          <div class="destination-option" data-destination="Rome">Rome</div>
+          <div class="destination-option" data-destination="Barcelona">Barcelona</div>
+          <div class="destination-option" data-destination="New York">New York</div>
+        </div>
+      </div>
+
+      <!-- Departure -->
+      <div class="input-box dropdown-wrapper" id="departure-toggle">
+        <img src="/assets/img/plane.png" alt="Departure">
+        <div>
+          <span class="input-title">Departure</span>
+          <span class="input-value" id="selected-departure">Select date</span>
+        </div>
+        <div class="dropdown calendar-dropdown" id="departure-dropdown" style="display: none;">
+          <input type="date" id="departure-picker" min="">
+        </div>
+      </div>
+
+      <!-- Arrival -->
+      <div class="input-box dropdown-wrapper" id="arrival-toggle">
+        <img src="/assets/img/arrival.png" alt="Arrival">
+        <div>
+          <span class="input-title">Arrival</span>
+          <span class="input-value" id="selected-arrival">Select date</span>
+        </div>
+        <div class="dropdown calendar-dropdown" id="arrival-dropdown" style="display: none;">
+          <input type="date" id="arrival-picker" min="">
+        </div>
+      </div>
+
+      <!-- Travelers -->
+      <div class="input-box dropdown-wrapper" id="travelers-toggle">
+        <img src="/assets/img/people.png" alt="Travelers">
+        <div>
+          <span class="input-title">Travelers</span>
+          <span class="input-value" id="selected-travelers">2 Adults</span>
         </div>
 
-        <!-- Arrival -->
-        <div class="input-box">
-          <img src="/assets/img/arrival.png" alt="Arrival">
-          <div>
-            <span class="input-title">Arrival</span>
-            <span class="input-value">20 May 2025</span>
+        <div class="dropdown" id="travelers-dropdown" style="display: none;">
+          <div class="row">
+            <span>Adults (12+)</span>
+            <button class="count-btn" data-type="adults" data-change="-1">−</button>
+            <span id="adults-count">2</span>
+            <button class="count-btn" data-type="adults" data-change="1">+</button>
           </div>
+          <div class="row">
+            <span>Children (2–11)</span>
+            <button class="count-btn" data-type="children" data-change="-1">−</button>
+            <span id="children-count">0</span>
+            <button class="count-btn" data-type="children" data-change="1">+</button>
+          </div>
+          <div class="row">
+            <span>Infants (&lt;2)</span>
+            <button class="count-btn" data-type="infants" data-change="-1">−</button>
+            <span id="infants-count">0</span>
+            <button class="count-btn" data-type="infants" data-change="1">+</button>
+          </div>
+          <hr class="dropdown-divider">
+          <button class="done-btn" id="travelers-done">Done</button>
         </div>
+      </div>
 
-        <!-- Travelers -->
-        <div class="input-box dropdown-wrapper">
-          <img src="/assets/img/people.png" alt="Travelers">
-          <div onclick="toggleDropdown('travelers-dropdown')">
-            <span class="input-title">Travelers</span>
-            <span class="input-value" id="selected-travelers">2 Adults</span>
-          </div>
-
-          <div class="dropdown" id="travelers-dropdown" style="display: none;">
-            <div class="row">
-              <span>Adults (12+)</span>
-              <button onclick="updateCount('adults', -1)">−</button>
-              <span id="adults-count">2</span>
-              <button onclick="updateCount('adults', 1)">+</button>
-            </div>
-            <div class="row">
-              <span>Children (2–11)</span>
-              <button onclick="updateCount('children', -1)">−</button>
-              <span id="children-count">0</span>
-              <button onclick="updateCount('children', 1)">+</button>
-            </div>
-            <div class="row">
-              <span>Infants (&lt;2)</span>
-              <button onclick="updateCount('infants', -1)">−</button>
-              <span id="infants-count">0</span>
-              <button onclick="updateCount('infants', 1)">+</button>
-            </div>
-            <hr class="dropdown-divider">
-            <button class="done-btn" onclick="closeAllDropdowns(); finalizeTravelers()">Done</button>
-          </div>
+      <!-- Class -->
+      <div class="input-box dropdown-wrapper" id="class-toggle">
+        <img src="/assets/img/seat.png" alt="Class">
+        <div>
+          <span class="input-title">Class</span>
+          <span class="input-value" id="selected-class">Economy</span>
         </div>
-
-        <!-- Class -->
-        <div class="input-box dropdown-wrapper">
-          <img src="/assets/img/seat.png" alt="Class">
-          <div onclick="toggleDropdown('class-dropdown')">
-            <span class="input-title">Class</span>
-            <span class="input-value" id="selected-class">Economy</span>
-          </div>
-          <div class="dropdown" id="class-dropdown">
-            <div onclick="selectClass('Economy')">Economy</div>
-            <div onclick="selectClass('Business')">Business</div>
-            <div onclick="selectClass('First')">First</div>
-          </div>
+        <div class="dropdown" id="class-dropdown">
+          <div class="class-option" data-class="Economy">Economy</div>
+          <div class="class-option" data-class="Business">Business</div>
+          <div class="class-option" data-class="First">First</div>
         </div>
+      </div>
 
     </div>
 
   <!-- Search -->
-  <button class="search-btn" onclick="performSearch()">
-    <img src="/assets/img/search-button.png" alt="Search" />
-  </button>
+    <button class="search-btn" id="search-btn">
+      <img src="/assets/img/search-button.png" alt="Search" />
+    </button>
 
 
   <main>
