@@ -43,15 +43,42 @@ export function getUserLogged() {
   return JSON.parse(sessionStorage.getItem("loggedUser"));
 }
 
+
 /**
- * CLASSE QUE MODELA UM UTILIZADOR NA APLICAÇÃO
+ * CLASSE QUE MODELO UM UTILIZADOR NA APLICAÇÃO
  */
 class User {
+  userId = "";
   username = "";
   password = "";
+  email = "";
+  coverPhoto = "";
+  birthDate = "";
+  phoneNumber = "";
+  defaultPaymentMethod = "";
+  gender = "";
+  quizzes = [
+    quiz = {
+      idQuiz: "",
+      correctAnswers: "",
+      quizMiles: ""
+    }
+  ]
 
-  constructor(username, password) {
+
+  constructor(userId, username, password, email, coverPhoto, birthDate, phoneNumber, defaultPaymentMethod, gender, quizzes) {
+    this.userId = userId;
     this.username = username;
     this.password = password;
+    this.email = email;
+    this.coverPhoto = coverPhoto;
+    this.birthDate = birthDate;
+    this.phoneNumber = phoneNumber;
+    this.defaultPaymentMethod = defaultPaymentMethod;
+    this.gender = gender;
+    this.quizzes = quizzes;
   }
 }
+
+
+
