@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const yearSelect = document.getElementById('dob-year');
   const currentYear = new Date().getFullYear();
   const minYear = currentYear - 18;
-  for (let y = minYear; y >= 1920; y--) {
+  for (let y = minYear; y >= 1960; y--) {
     const opt = document.createElement('option');
     opt.value = y;
     opt.textContent = y;
