@@ -1,8 +1,8 @@
-// /js/views/AccountView.js
-
-import { getUserLogged, logout, isLogged } from '/js/models/UserModel.js';
+import { getUserLogged, logout, isLogged, init } from '/js/models/UserModel.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  init(); // ← garante que users está carregado se precisares mais tarde
+
   if (!isLogged()) {
     alert("You're not logged in!");
     window.location.href = "/html/login.html";

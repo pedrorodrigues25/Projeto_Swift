@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swift - Swift</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/settings.css">
+  <link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/html/home.html">Home</a>
+        <a href="/html/flights.html">Flights</a>
+      </div>
+      <img src="/assets/img/logoE.png" alt="Swift logo" class="logo">
+      <div class="nav-right">
+        <a href="/html/discover.html">Discover</a>
+        <a href="/html/review.html">Reviews</a>
+
+        <!-- ENVOLVENDO O MENU E O ÍCONE -->
+        <div class="menu-wrapper">
+          <div class="menu-icon" id="menu-icon">☰</div>
+          <div class="dropdown-menu hidden" id="dropdownMenu">
+            <ul>
+              <li>
+                <span>Your flights</span>
+                <img src="/assets/img/iconFlights.png" alt="Your flights icon">
+              </li>
+              <li>
+                <span>Liked Destinations</span>
+                <img src="/assets/img/like.png" alt="Liked destinations icon">
+              </li>
+              <li>
+                <a href="/html/login.html"><span>Log in</span></a>
+                <img src="/assets/img/login.png" alt="Login icon">
+              </li>
+              <li>
+                <a href="/html/account.html"><span>Account</span></a>
+                <img src="/assets/img/people.png" alt="Account icon">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<main class="account-settings">
+  <h1>Account <span>› Settings</span></h1>
+
+  <section class="details-section">
+    <div class="input-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name">
+    </div>
+
+    <div class="input-group">
+      <label for="display-name">Display name:</label>
+      <input type="text" id="display-name">
+    </div>
+
+    <div class="input-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="e.g. anne@gmail.com">
+    </div>
+
+    <div class="input-group">
+      <label for="dob">Date of birth:</label>
+      <div class="dob-group">
+        <input type="text" placeholder="Day">
+        <input type="text" placeholder="Month">
+        <input type="text" placeholder="Year">
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="phone">Phone Number:</label>
+      <div class="phone-group">
+        <span class="flag">🇵🇹 +351</span>
+        <input type="text" id="phone" placeholder="123 456 789">
+      </div>
+    </div>
+
+    <div class="input-group sex-group">
+      <label>Sex:</label>
+      <label><input type="radio" name="sex" value="male"> Male</label>
+      <label><input type="radio" name="sex" value="female"> Female</label>
+    </div>
+  </section>
+
+  <section class="security-section">
+    <h2>Security Settings</h2>
+    <button class="setting-btn">
+      <span>🔒 Two-factor authentication</span>
+      <span>›</span>
+    </button>
+    <button class="setting-btn">
+      <span>💻 Devices</span>
+      <span>›</span>
+    </button>
+  </section>
+
+  <section class="payment-section">
+    <h2>Default Payment Method</h2>
+    <div class="payment-options">
+      <button>Credit Card</button>
+      <button>PayPal</button>
+      <button>Pay</button>
+      <button>G Pay</button>
+    </div>
+  </section>
+
+  <button class="delete-account">🗑️ Delete Account</button>
+</main>
+
+<footer>
+    <img src="/assets/img/logo.png" alt="Swift logo" class="logo">
+    <div>Email:<p>caldas@swift.com</p></div>
+    <div>Location: <p>Porto</p></div>
+    <div>Contact: <p>+351 903510863</p> </div>
+  </footer>
+
+<script src="/js/views/MenuViews.js"></script>
+<script src="/js/views/SettingsViews.js"></script>
+</body>
+</html>

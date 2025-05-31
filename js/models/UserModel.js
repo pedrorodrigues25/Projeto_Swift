@@ -43,9 +43,6 @@ export function getUserLogged() {
   return JSON.parse(sessionStorage.getItem("loggedUser"));
 }
 
-/**
- * CLASSE QUE MODELO UM UTILIZADOR NA APLICAÇÃO
- */
 class User {
   userId = "";
   username = "";
@@ -63,7 +60,6 @@ class User {
       quizMiles: ""
     }
   ]
-
 
   constructor(userId, username, password, email, coverPhoto, birthDate, phoneNumber, defaultPaymentMethod, gender, quizzes) {
     this.userId = userId;

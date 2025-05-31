@@ -1,5 +1,3 @@
-// /js/views/CreateAccount.views.js
-
 import * as userModel from '/js/models/UserModel.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -37,4 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
       alert(err.message);
     }
   });
+
+  document.querySelector('.close-btn').onclick = function () {
+    window.location.href = '/index.html';
+  };
 });

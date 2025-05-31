@@ -1,5 +1,3 @@
-// /js/views/LoginViews.js
-
 import * as userModel from '/js/models/UserModel.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,14 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const success = userModel.login(username, password);
       if (success) {
         alert('Login successful!');
-        window.location.href = '/html/account.html'; // Redireciona para a conta
+        window.location.href = '/html/account.html';
       }
     } catch (error) {
       alert(error.message);
     }
   });
-});
 
-document.querySelector('.close-btn').onclick = function() {
-  window.location.href = '/index.html';
-};
+  document.querySelector('.close-btn').onclick = function () {
+    window.location.href = '/index.html';
+  };
+});
