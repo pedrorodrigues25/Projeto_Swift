@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+/* HEADER */
+
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding: 20px 50px;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-left.nav-left:hover {
+  color: #ffb30d;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #001542;
+  font-size: 14px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.menu-icon {
+    margin-left: 25px;
+    cursor: pointer;
+    font-size: 20px; 
+    color: #001542;
+}
+
+body {
+  font-family: 'Baloo 2', cursive;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #333;
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2, h3 {
+  margin-bottom: 1rem;
+}
+
+#destination-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#destination-info img {
+  width: 100%;
+  border-radius: 12px;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+#destination-info h3 {
+  font-size: 2rem;
+  color: #ff9f1c;
+}
+
+#baggage-options {
+  margin-top: 2rem;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+#baggage-options label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+#flights-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.flight-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #eee;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #fdfdfd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.flight-card .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.flight-card .price {
+  font-size: 1.2rem;
+  color: #ff9f1c;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flight-card button {
+  padding: 0.5rem 1rem;
+  background: #002855;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.flight-card button:hover {
+  background: #004080;
+}
+
+#reviews-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #eee;
+}
+
+.review-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.review-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.review-text {
+  flex: 1;
+}
+
+/* FOOTER */
+
+footer {
+  background: #00132e;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 40px auto 20px auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+footer div {
+  margin: 10px 0;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}

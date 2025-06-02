@@ -167,3 +167,26 @@ document.addEventListener("DOMContentLoaded", function () {
   // Botão de pesquisa
   document.getElementById('search-btn').addEventListener('click', performSearch);
 });
+
+document.getElementById("search-btn").addEventListener("click", () => {
+  const destination = document.getElementById("selected-destination").textContent.trim();
+  const departureDate = document.getElementById("selected-departure").textContent.trim();
+  const arrivalDate = document.getElementById("selected-arrival").textContent.trim();
+  const travelers = document.getElementById("selected-travelers").textContent.trim();
+  const travelClass = document.getElementById("selected-class").textContent.trim();
+
+  if (destination === "e.g Paris") {
+    alert("Please select a destination.");
+    return;
+  }
+
+  const queryString = new URLSearchParams({
+    destination,
+    departure: departureDate,
+    arrival: arrivalDate,
+    travelers,
+    class: travelClass,
+  }).toString();
+
+  window.location.href = `/html/destination.html?${queryString}`;
+});
