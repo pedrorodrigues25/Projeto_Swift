@@ -263,6 +263,22 @@ main h1 {
   flex: 1;
 }
 
+.select-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #ffd600;
+  color: #222;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.select-btn:hover {
+  background: #ffe066;
+}
+
 /* FOOTER */
 footer {
   background: #00132e;
