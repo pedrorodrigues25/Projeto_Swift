@@ -4,10 +4,6 @@
 
 class destination{
 
-      /**
-   * 
-   * ADICIONAR NA CLASSE INFO SOBRE OS VOOS (DATA-CLASSE- PESSOAS) TEXTO SOBRE O DESTINO
-   */
 
   idDestination = "";
   destinationInfo = "";
