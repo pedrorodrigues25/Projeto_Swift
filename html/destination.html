@@ -50,82 +50,73 @@
 
   <!-- Main content -->
   <main class="destination-page">
-    <h1 id="destination-title">Destination</h1>
+    <h1 id="destination-title">Your trip to <span id="destination-name">Unknown</span></h1>
 
-    <section class="destination-info">
-      <p><strong>Destination:</strong> <span id="destination-name"></span></p>
-      <p><strong>Departure:</strong> <span id="departure-date"></span></p>
-      <p><strong>Arrival:</strong> <span id="arrival-date"></span></p>
-      <p><strong>Travelers:</strong> <span id="travelers-count"></span></p>
-      <p><strong>Class:</strong> <span id="travel-class"></span></p>
-    </section>
+    <section class="destination-wrapper">
+      <div class="destination-card" id="destination-card">
+        <img src="" alt="Destination image" />
+      </div>
 
-    <section class="destination-card" id="destination-card">
-      <img src="" alt="Destination image" />
-      <p></p>
+      <div class="destination-info">
+        <p><strong>Departure:</strong> <span id="departure-date">Not selected</span></p>
+        <p><strong>Arrival:</strong> <span id="arrival-date">Not selected</span></p>
+        <p><strong>Travelers:</strong> <span id="travelers-count">Not defined</span></p>
+        <p><strong>Class:</strong> <span id="travel-class">Economy</span></p>
+      </div>
     </section>
   </main>
 
+  <!-- Other Sections -->
   <section id="baggage-selection">
-  <h2>Baggage type:</h2>
-  <form>
-    <label>
-      <input type="radio" name="baggage" checked />
-      Hand baggage
-      <img src="/assets/img/handbaggage.png" alt="hand baggage" />
-    </label>
-    <label>
-      <input type="radio" name="baggage" />
-      Hand baggage and carry on baggage
-      <img src="/assets/img/handbaggage.png" alt="hand baggage" />
-      <img src="/assets/img/carrybaggage.png" alt="carry on baggage" />
-    </label>
-    <label>
-      <input type="radio" name="baggage" />
-      Hand baggage, carry on baggage and checked baggage
-      <img src="/assets/img/handbaggage.png" alt="hand baggage" />
-      <img src="/assets/img/carrybaggage.png" alt="carry on baggage" />
-      <img src="/assets/img/checkedbaggage.png" alt="checked baggage" />
-    </label>
-    <p class="baggage-note">
-      Different baggage options may alter flight prices<br />
-      <a href="/html/baggageinfo.html">More information about baggage</a>
-    </p>
-  </form>
-</section>
+    <h2>Baggage type:</h2>
+    <form>
+      <label>
+        <input type="radio" name="baggage" checked />
+        Hand baggage
+        <img src="/assets/img/handbaggage.png" alt="hand baggage" />
+      </label>
+      <label>
+        <input type="radio" name="baggage" />
+        Hand baggage and carry on baggage
+        <img src="/assets/img/handbaggage.png" alt="hand baggage" />
+        <img src="/assets/img/carrybaggage.png" alt="carry on baggage" />
+      </label>
+      <label>
+        <input type="radio" name="baggage" />
+        Hand baggage, carry on baggage and checked baggage
+        <img src="/assets/img/handbaggage.png" alt="hand baggage" />
+        <img src="/assets/img/carrybaggage.png" alt="carry on baggage" />
+        <img src="/assets/img/checkedbaggage.png" alt="checked baggage" />
+      </label>
+      <p class="baggage-note">
+        Different baggage options may alter flight prices<br />
+        <a href="/html/baggageinfo.html">More information about baggage</a>
+      </p>
+    </form>
+  </section>
 
-<section id="flights-list">
-  <div class="flight-card highlight">
-    <img src="/assets/img/easyjet.png" alt="EasyJet logo" />
-    <div class="info">
-      <strong>EasyJet</strong>
-      
+  <section id="flights-list">
+    <div class="flight-card highlight">
+      <img src="/assets/img/easyjet.png" alt="EasyJet logo" />
+      <div class="info"><strong>EasyJet</strong></div>
+      <div class="price">50€</div>
+      <button>Select</button>
     </div>
-    <div class="price">50€</div>
-    <button>Select</button>
-  </div>
 
-  <div class="flight-card">
-    <img src="/assets/img/ryanair.png" alt="Ryanair logo" />
-    <div class="info">
-      <strong>Ryanair</strong>
-      
+    <div class="flight-card">
+      <img src="/assets/img/ryanair.png" alt="Ryanair logo" />
+      <div class="info"><strong>Ryanair</strong></div>
+      <div class="price">70€</div>
+      <button>Select</button>
     </div>
-    <div class="price">70€</div>
-    <button>Select</button>
-  </div>
 
-  <div class="flight-card">
-    <img src="/assets/img/transavia.png" alt="Transavia logo" />
-    <div class="info">
-      <strong>Transavia</strong>
-      
+    <div class="flight-card">
+      <img src="/assets/img/transavia.png" alt="Transavia logo" />
+      <div class="info"><strong>Transavia</strong></div>
+      <div class="price">100€</div>
+      <button>Select</button>
     </div>
-    <div class="price">100€</div>
-    <button>Select</button>
-  </div>
-</section>
-
+  </section>
 
   <!-- Footer -->
   <footer>
