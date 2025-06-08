@@ -67,50 +67,61 @@ header {
     color: #333333;
 }
 
-.liked-destinations {
-  padding: 120px 40px 40px 40px;
-  max-width: 1200px;
+.your-flights {
+  padding: 60px 40px ;
+  max-width: 1000px;
   margin: auto;
-  text-align: center;
 }
 
 .back-icon {
-  text-align: left;
   font-size: 24px;
   margin-bottom: 20px;
   cursor: pointer;
 }
 
-.destinations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  margin-top: 20px;
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-.destination-card {
-  border: 1.5px solid #00132e;
-  border-radius: 10px;
-  padding: 20px;
-  transition: transform 0.3s;
-}
-
-.destination-card:hover {
-  transform: translateY(-5px);
-}
-
-.destination-card img {
+.flights-table {
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 10px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 16px;
 }
 
-.destination-card h3 {
-  font-size: 20px;
-  color: #01404f;
+.flights-table th, .flights-table td {
+  padding: 12px 10px;
 }
+
+.flights-table td:nth-child(1) {
+  font-weight: bold;
+  color: #333;
+}
+
+.more-info-btn {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-upcoming {
+  background-color: #468d80;
+}
+
+.btn-past {
+  background-color: #d13838;
+}
+
+.btn-today {
+  background-color: gray;
+}
+
 
 
 /* FOOTER */
