@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz - Swift</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flights - Swift</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/likedDestination.css" />
   <link rel="stylesheet" href="/css/menu.css">
-  <link rel="stylesheet" href="/css/quiz-info.css">
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header / Menu -->
   <header>
     <nav class="navbar">
       <div class="nav-left">
@@ -49,38 +50,27 @@
     </nav>
   </header>
 
-  <main class="quiz-intro">
-  <div class="quiz-content">
-    <div class="quiz-image-container">
-      <img src="/assets/img/greeceC.png" alt="Imagem do destino" class="quiz-image">
-    </div>
+  <main class="liked-destinations">
+   <div class="back-icon">
+   </div>
+   <h1>Liked Destinations</h1>
+   <section class="destinations-grid" id="destinations-container">
+    <!-- Cards vão ser gerados aqui via JS -->
+   </section>
+  </main>
 
-    <div class="quiz-text">
-      <h1><span id="destinationName">GREECE</span></h1>
-
-      <p class="quiz-description">
-      Explora este destino incrível através de um divertido quiz! Testa os teus conhecimentos sobre a cultura, história e curiosidades locais. No final, poderás ganhar milhas Swift gratuitas se acertares o suficiente!      </p>
-    </div>
-  </div>
-
-  <div class="quiz-banner">
-    <img src="/assets/img/adivinhas.png" alt="Achas que adivinhas tudo?">
-  </div>
-
-  <div class="quiz-button-wrapper">
-    <a class="start-button" href="/html/quiz-questions.html">Play</a>
-  </div>
-</main>
 
   <!-- Footer -->
   <footer>
     <img src="/assets/img/logo.png" alt="Swift logo" class="logo">
-    <div>Email:<p>caldas@swift.com</p></div>
+    <div>Email: <p>caldas@swift.com</p></div>
     <div>Location: <p>Porto</p></div>
     <div>Contact: <p>+351 903510863</p></div>
   </footer>
 
+  <!-- Scripts -->
   <script src="/js/views/MenuViews.js"></script>
-
+  <script type="module" src="/js/models/DestinationModel.js"></script>
+  <script  src="/js/views/LikedDestinationView.js"></script>
 </body>
 </html>
