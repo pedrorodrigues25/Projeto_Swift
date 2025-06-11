@@ -181,6 +181,29 @@ header {
   color: white;
 }
 
+.vr-btn {
+  display: block;
+  margin: 30px auto;
+  padding: 6px 12px;      
+  background: #FFD600;
+  color: #111;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 16px;    /* raio menor */
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  width: fit-content;
+  min-width: 80px;       }
+
+.vr-btn:hover {
+  background: #ffe066;
+  color: #000;
+}
+
 /* Footer */
 footer {
   background: #00132e;
