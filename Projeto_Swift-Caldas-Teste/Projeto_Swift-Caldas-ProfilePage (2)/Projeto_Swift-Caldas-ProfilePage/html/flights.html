@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flights - Swift</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/flights.css" />
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+</head>
+<body>
+  <!-- Header / Menu -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/html/home.html">Home</a>
+        <a href="/html/flights.html">Flights</a>
+      </div>
+      <img src="/assets/img/logoE.png" alt="Swift logo" class="logo">
+      <div class="nav-right">
+        <a href="/html/discover.html">Discover</a>
+        <a href="/html/review.html">Reviews</a>
+
+        <!-- ENVOLVENDO O MENU E O ÍCONE -->
+        <div class="menu-wrapper">
+          <div class="menu-icon" id="menu-icon">☰</div>
+          <div class="dropdown-menu hidden" id="dropdownMenu">
+            <ul>
+              <li>
+                <a href="/html/yourFlights.html"><span>Your Flights</span></a>
+                <img src="/assets/img/iconFlights.png" alt="Your flights icon">
+              </li>
+              <li>
+                <a href="/html/likedDestination.html"><span>Liked Destinations</span></a>
+                <img src="/assets/img/like.png" alt="Liked destinations icon">
+              </li>
+              <li>
+                <a href="/html/login.html"><span>Log in</span></a>
+                <img src="/assets/img/login.png" alt="Login icon">
+              </li>
+              <li>
+                <a href="/html/account.html"><span>Account</span></a>
+                <img src="/assets/img/people.png" alt="Account icon">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="search-section">
+    <h2>Find your next trip</h2>
+    <div class="search-bar">
+
+      <!-- Where to -->
+      <div class="input-box dropdown-wrapper" id="whereto-toggle">
+        <img src="/assets/img/location.png" alt="Where to">
+        <div>
+          <span class="input-title">Where to:</span>
+          <span class="input-value" id="selected-destination">e.g Paris</span>
+        </div>
+
+        <div class="dropdown" id="whereto-dropdown" style="display: none;">
+          <div class="destination-option" data-destination="Paris">Paris</div>
+          <div class="destination-option" data-destination="London">London</div>
+          <div class="destination-option" data-destination="Rome">Rome</div>
+          <div class="destination-option" data-destination="Barcelona">Barcelona</div>
+          <div class="destination-option" data-destination="New York">New York</div>
+        </div>
+      </div>
+
+      <!-- Departure -->
+      <div class="input-box dropdown-wrapper" id="departure-toggle">
+        <img src="/assets/img/plane.png" alt="Departure">
+        <div>
+          <span class="input-title">Departure</span>
+          <span class="input-value" id="selected-departure">Select date</span>
+        </div>
+        <div class="dropdown calendar-dropdown" id="departure-dropdown" style="display: none;">
+          <input type="text" id="departure-picker" min="">
+        </div>
+      </div>
+
+      <!-- Arrival -->
+      <div class="input-box dropdown-wrapper" id="arrival-toggle">
+        <img src="/assets/img/arrival.png" alt="Arrival">
+        <div>
+          <span class="input-title">Arrival</span>
+          <span class="input-value" id="selected-arrival">Select date</span>
+        </div>
+        <div class="dropdown calendar-dropdown" id="arrival-dropdown" style="display: none;">
+          <input type="text" id="arrival-picker" min="">
+        </div>
+      </div>
+
+      <!-- Travelers -->
+      <div class="input-box dropdown-wrapper" id="travelers-toggle">
+        <img src="/assets/img/people.png" alt="Travelers">
+        <div>
+          <span class="input-title">Travelers</span>
+          <span class="input-value" id="selected-travelers">2 Adults</span>
+        </div>
+
+        <div class="dropdown" id="travelers-dropdown" style="display: none;">
+          <div class="row">
+            <span>Adults (12+)</span>
+            <button class="count-btn" data-type="adults" data-change="-1">−</button>
+            <span id="adults-count">2</span>
+            <button class="count-btn" data-type="adults" data-change="1">+</button>
+          </div>
+          <div class="row">
+            <span>Children (2–11)</span>
+            <button class="count-btn" data-type="children" data-change="-1">−</button>
+            <span id="children-count">0</span>
+            <button class="count-btn" data-type="children" data-change="1">+</button>
+          </div>
+          <div class="row">
+            <span>Infants (&lt;2)</span>
+            <button class="count-btn" data-type="infants" data-change="-1">−</button>
+            <span id="infants-count">0</span>
+            <button class="count-btn" data-type="infants" data-change="1">+</button>
+          </div>
+          <hr class="dropdown-divider">
+          <button class="done-btn" id="travelers-done">Done</button>
+        </div>
+      </div>
+
+      <!-- Class -->
+      <div class="input-box dropdown-wrapper" id="class-toggle">
+        <img src="/assets/img/seat.png" alt="Class">
+        <div>
+          <span class="input-title">Class</span>
+          <span class="input-value" id="selected-class">Economy</span>
+        </div>
+        <div class="dropdown" id="class-dropdown">
+          <div class="class-option" data-class="Economy">Economy</div>
+          <div class="class-option" data-class="Business">Business</div>
+          <div class="class-option" data-class="First">First</div>
+        </div>
+      </div>
+
+      <!-- Turismo -->
+      <div class="input-box dropdown-wrapper" id="turismo-toggle">
+        <img src="/assets/img/turismo.png" alt="Turismo">
+        <div>
+          <span class="input-title">Tourism</span>
+          <span class="input-value" id="selected-airline">Any</span>
+        </div>
+        <div class="dropdown" id="turismo-dropdown" style="display: none;">
+          <div class="turismo-option" data-airline="Architectural">Architectural</div>
+          <div class="turismo-option" data-airline="Gastronomic">Gastronomic</div>
+          <div class="turismo-option" data-airline="Religious">Religious</div>
+          <div class="turismo-option" data-airline="Beachs">Beachs</div>
+          <div class="turismo-option" data-airline="Adventure">Adventure</div>
+        </div>
+      </div>
+
+    </div>
+
+  <!-- Search -->
+    <button class="search-btn" id="search-btn">
+      <img src="/assets/img/search-button.png" alt="Search" />
+    </button>
+
+
+  <main>
+    <section class="hot-days">
+      <h2>If you like hot days</h2>
+      <div class="card-grid">
+        <div class="card large">
+          <img src="/assets/img/paris.png" alt="Paris">
+          <div class="card-content">
+            <h3>Paris</h3>
+            <p>Direct flights from Porto</p>
+            <span class="price">50€</span>
+          </div>
+        </div>
+        <div class="card large">
+          <img src="/assets/img/santorini.png" alt="Santorini">
+          <div class="card-content">
+            <h3>Santorini</h3>
+            <p>Direct flights from Porto</p>
+            <span class="price">45€</span>
+          </div>
+        </div>
+        <div class="card large">
+          <img src="/assets/img/rome.png" alt="Rome">
+          <div class="card-content">
+            <h3>Rome</h3>
+            <p>Direct flights from Porto</p>
+            <span class="price">30€</span>
+          </div>
+        </div>
+        <div class="card large">
+          <img src="/assets/img/monaco.png" alt="Monaco">
+          <div class="card-content">
+            <h3>Monaco</h3>
+            <p>Direct flights from Porto</p>
+            <span class="price">350€</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="best-offers">
+      <h2>Our best offers</h2>
+      <div class="offer-cards">
+        <div class="offer-card">
+          <img src="/assets/img/paris.png" alt="Paris">
+          <h4>Paris</h4>
+          <span>50€</span>
+        </div>
+        <div class="offer-card">
+          <img src="/assets/img/london.png" alt="London">
+          <h4>London</h4>
+          <span>60€</span>
+        </div>
+        <div class="offer-card">
+          <img src="/assets/img/nice.png" alt="Nice">
+          <h4>Nicek</h4>
+          <span>70€</span>
+        </div>
+        <div class="offer-card">
+          <img src="/assets/img/rome.png" alt="Rome">
+          <h4>Rome</h4>
+          <span>55€</span>
+        </div>
+        <div class="offer-card">
+          <img src="/assets/img/santorini.png" alt="Santorini">
+          <h4>Santorini</h4>
+          <span>45€</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="new-experience">
+      <h2>For new experiences</h2>
+      <div class="experience-box">
+        <div class="experience-text">
+          <h3>Paris</h3>
+          <p>Direct flights from Porto</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <button class="book-btn">Book</button>
+        </div>
+        <div class="experience-img">
+          <img src="/assets/img/paris.png" alt="Paris">
+          <span class="price-tag">50€</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- Footer -->
+<footer>
+    <img src="/assets/img/logo.png" alt="Swift logo" class="logo">
+    <div>Email: <p>caldas@swift.com</p></div>
+    <div>Location: <p>Porto</p></div>
+    <div>Contact: <p>+351 903510863</p></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="/js/views/SearchbarViews.js"></script>
+  <script src="/js/views/MenuViews.js"></script>
+
+</body>
+</html>

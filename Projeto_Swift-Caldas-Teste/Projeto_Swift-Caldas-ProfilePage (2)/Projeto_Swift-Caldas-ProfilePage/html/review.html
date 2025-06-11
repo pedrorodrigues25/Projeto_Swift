@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reviews - Swift</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/css/review.css" />
+  <link rel="stylesheet" href="/css/menu.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+  <!-- Header / Menu -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/html/home.html">Home</a>
+        <a href="/html/flights.html">Flights</a>
+      </div>
+      <img src="/assets/img/logoE.png" alt="Swift logo" class="logo">
+      <div class="nav-right">
+        <a href="/html/discover.html">Discover</a>
+        <a href="/html/review.html">Reviews</a>
+
+        <!-- ENVOLVENDO O MENU E O ÍCONE -->
+        <div class="menu-wrapper">
+          <div class="menu-icon" id="menu-icon">☰</div>
+          <div class="dropdown-menu hidden" id="dropdownMenu">
+            <ul>
+              <li>
+                <a href="/html/yourFlights.html"><span>Your Flights</span></a>
+                <img src="/assets/img/iconFlights.png" alt="Your flights icon">
+              </li>
+              <li>
+                <a href="/html/likedDestination.html"><span>Liked Destinations</span></a>
+                <img src="/assets/img/like.png" alt="Liked destinations icon">
+              </li>
+              <li>
+                <a href="/html/login.html"><span>Log in</span></a>
+                <img src="/assets/img/login.png" alt="Login icon">
+              </li>
+              <li>
+                <a href="/html/account.html"><span>Account</span></a>
+                <img src="/assets/img/people.png" alt="Account icon">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Secção de Reviews -->
+  <section class="review-section">
+    <h2>Leave your mark and give a review</h2>
+
+    <div class="review-form">
+      <div class="form-inputs">
+        <div class="input-group">
+          <label for="city"><strong>City / Country</strong></label>
+          <select id="city" class="dropdown-select">
+            <option value="">Choose a destination</option>
+            <!-- Options via JS -->
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="review"><strong>Write your review</strong></label>
+          <textarea id="review" placeholder="Add your mark" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="rating-box">
+        <h1>Rating</h1>
+        <div class="stars">
+          <img src="/assets/img/birdreview.png" class="bird" />
+          <img src="/assets/img/birdreview.png" class="bird" />
+          <img src="/assets/img/birdreview.png" class="bird" />
+          <img src="/assets/img/birdreview.png" class="bird" />
+          <img src="/assets/img/birdreview.png" class="bird" />
+        </div>
+        <div>
+          <button class="add-btn">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-list"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <img src="/assets/img/logo.png" alt="Swift logo" class="logo">
+    <div>Email: <p>caldas@swift.com</p></div>
+    <div>Location: <p>Porto</p></div>
+    <div>Contact: <p>+351 903510863</p></div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/views/MenuViews.js"></script>
+  <script src="/js/views/ReviewViews.js"></script>
+</body>
+</html>

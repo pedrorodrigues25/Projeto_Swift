@@ -1,0 +1,44 @@
+.menu-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  width: 220px;
+  font-family: 'Baloo 2', sans-serif;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.dropdown-menu li img {
+  width: 24px;
+  height: 24px;
+}
+
+.hidden {
+  display: none;
+}

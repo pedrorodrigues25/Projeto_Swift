@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+/* HEADER */
+
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding: 20px 50px;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-left.nav-left:hover {
+  color: #ffb30d;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #001542;
+  font-size: 14px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.menu-icon {
+    margin-left: 25px;
+    cursor: pointer;
+    font-size: 20px; 
+    color: #001542;
+}
+
+/* SEARCH BAR */
+
+.search-section {
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .input-box {
+    background: #f0f0f0;
+    border-radius: 30px;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    position: relative;
+    min-width: 140px;
+    transition: background 0.3s;
+  }
+
+  .input-box:hover {
+    background: #e4e4e4;
+  }
+
+  .input-box img {
+    height: 50px;
+  }
+
+  .input-title {
+    font-size: 13px;
+    color: #555;
+    display: block;
+  }
+
+  .input-value {
+    font-weight: bold;
+    color: #091f5c;
+    font-size: 14px;
+    display: block;
+  }
+
+  .dropdown {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  min-width: 220px;
+  z-index: 1000;
+  padding: 10px;
+  color: black; /* ou white, se fundo for escuro */
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.row span {
+  flex: 1;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.counter button {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.counter span {
+  min-width: 20px;
+  text-align: center;
+}
+
+.dropdown-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 15px 0;
+}
+
+.done-btn {
+  background-color: #0064d2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.done-btn:hover {
+  background-color: #0051a8;
+}
+
+/* Sections */
+section {
+  padding: 40px 80px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Hot Days Section */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card.large {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.card.large img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  margin: 0;
+}
+
+.card-content p {
+  font-size: 12px;
+  color: #666;
+}
+
+.card-content .price {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #ffb30d;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* Offers */
+.offer-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.offer-card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 120px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.offer-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* New Experience */
+.new-experience .experience-box {
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.experience-text {
+  flex: 1;
+  padding: 30px;
+}
+
+.book-btn {
+  background: #ffb30d;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.experience-img {
+  flex: 1;
+  position: relative;
+}
+
+.experience-img img {
+  width: 100%;
+  height: 246px;
+  object-fit: cover;
+}
+
+.price-tag {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #ffb30d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+  background: #00132e;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 40px auto 20px auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+footer div {
+  margin: 10px 0;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+

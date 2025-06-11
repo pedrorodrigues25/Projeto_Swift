@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+}
+
+/* HEADER */
+
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding: 20px 50px;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-left.nav-left:hover {
+  color: #ffb30d;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #001542;
+  font-size: 14px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.menu-icon {
+    margin-left: 25px;
+    cursor: pointer;
+    font-size: 20px; 
+    color: #001542;
+}
+
+
+/* Main container */
+.account-settings {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 20px;
+}
+
+/* Headings */
+.account-settings h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+.account-settings h1 span {
+  font-size: 20px;
+  color: gray;
+}
+.account-settings h2 {
+  margin: 20px 0 10px;
+}
+
+/* Input groups */
+.input-group {
+  margin-bottom: 20px;
+  flex: 1;
+}
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+}
+
+/* Date of birth */
+.dob-group input {
+  width: 30%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* Rows */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* Phone */
+.phone-input {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+.flag {
+  background: #015b04;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  font-weight: 500;
+}
+.phone-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #c4c4c4;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+}
+
+/* Sex */
+.sex-group label {
+  margin-right: 15px;
+  font-weight: 400;
+}
+
+/* Settings buttons */
+.setting-btn {
+  width: 100%;
+  background: white;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+/* Payment options */
+.payment-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.payment-options label {
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 10px 15px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pay-icon {
+  height: 24px;
+}
+
+/* Delete button */
+.delete-account {
+  background: #b63030;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background: #00132e;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 40px auto 20px auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+footer div {
+  margin: 10px 0;
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+/* Save Settings button */
+.save-btn {
+  background: #ffc107; /* Amarelo */
+  color: white; /* Cor do texto, pode ser preto se preferires no amarelo */
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 20px; /* Para dar espaço, como o delete-account */
+  cursor: pointer;
+  /* Adiciona a transição se quiseres um efeito ao passar o rato */
+  transition: background 0.3s ease;
+}
+
+.save-btn:hover {
+  background: #e0a800; /* Um amarelo um pouco mais escuro para o hover */
+}
+
+
+
+a {
+  text-decoration: none;
+  color: #001542;
+}
