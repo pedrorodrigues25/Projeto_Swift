@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+/* HEADER */
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding: 20px 50px;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #001542;
+  font-size: 14px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.menu-icon {
+  margin-left: 25px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #001542;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f7f9fc;
+  padding-top: 100px;
+  margin: 0;
+}
+
+/* Checkout container */
+.checkout-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.checkout-container h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #001542;
+}
+
+.checkout-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Preview image + description */
+.checkout-preview {
+  flex: 1 1 300px;
+  max-width: 350px;
+  text-align: center;
+}
+
+.checkout-preview img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.checkout-preview p {
+  margin-top: 15px;
+  color: #444;
+}
+
+/* Trip info */
+.checkout-info {
+  flex: 1 1 300px;
+  max-width: 350px;
+  text-align: left;
+  padding: 10px;
+}
+
+.checkout-info p {
+  margin: 15px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.confirm-btn {
+  display: block;
+  margin-top: 30px;
+  background-color: #001542;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background-color: #003175;
+}
+
+/* Footer */
+footer {
+  background: #00132e;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 40px auto 20px auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+footer div {
+  display: inline-block;
+  margin: 10px 20px 0 0;
+}
+
+
+
+/* FOOTER */
+footer {
+  background: #00132e;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 40px auto 20px auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+footer div {
+  margin: 10px 0;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}

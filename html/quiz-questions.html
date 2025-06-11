@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Questions - Swift</title>
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/quiz-questions.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/html/home.html">Home</a>
+        <a href="/html/flights.html">Flights</a>
+      </div>
+      <img src="/assets/img/logoE.png" alt="Swift logo" class="logo">
+      <div class="nav-right">
+        <a href="/html/discover.html">Discover</a>
+        <a href="/html/review.html">Reviews</a>
+
+        <!-- ENVOLVENDO O MENU E O ÍCONE -->
+        <div class="menu-wrapper">
+          <div class="menu-icon" id="menu-icon">☰</div>
+          <div class="dropdown-menu hidden" id="dropdownMenu">
+            <ul>
+              <li>
+                <a href="/html/yourFlights.html"><span>Your Flights</span></a>
+                <img src="/assets/img/iconFlights.png" alt="Your flights icon">
+              </li>
+              <li>
+                <a href="/html/likedDestination.html"><span>Liked Destinations</span></a>
+                <img src="/assets/img/like.png" alt="Liked destinations icon">
+              </li>
+              <li>
+                <a href="/html/login.html"><span>Log in</span></a>
+                <img src="/assets/img/login.png" alt="Login icon">
+              </li>
+              <li>
+                <a href="/html/account.html"><span>Account</span></a>
+                <img src="/assets/img/people.png" alt="Account icon">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Quiz Content -->
+  <main class="quiz-questions">
+    <h1 id="quiz-title">Quiz: <span id="destination-title">Greece</span></h1>
+
+    <form id="quiz-form">
+      <!-- Pergunta 1 -->
+      <div class="question-card">
+        <p>1. Qual é a capital da Grécia?</p>
+        <label><input type="radio" name="q1" value="Atenas"> Atenas</label>
+        <label><input type="radio" name="q1" value="Santorini"> Santorini</label>
+        <label><input type="radio" name="q1" value="Creta"> Creta</label>
+        <label><input type="radio" name="q1" value="Rodes"> Rodes</label>
+      </div>
+
+      <!-- Pergunta 2 -->
+      <div class="question-card">
+        <p>2. Que deus era adorado no templo do Parténon?</p>
+        <label><input type="radio" name="q2" value="Zeus"> Zeus</label>
+        <label><input type="radio" name="q2" value="Atena"> Atena</label>
+        <label><input type="radio" name="q2" value="Poseidon"> Poseidon</label>
+        <label><input type="radio" name="q2" value="Apolo"> Apolo</label>
+      </div>
+
+      <!-- Pergunta 3 -->
+      <div class="question-card">
+        <p>3. Qual destes pratos é típico da Grécia?</p>
+        <label><input type="radio" name="q3" value="Moussaka"> Moussaka</label>
+        <label><input type="radio" name="q3" value="Pizza"> Pizza</label>
+        <label><input type="radio" name="q3" value="Curry"> Curry</label>
+        <label><input type="radio" name="q3" value="Sushi"> Sushi</label>
+      </div>
+
+      <!-- Pergunta 4 -->
+      <div class="question-card">
+        <p>4. Qual destas ilhas pertence à Grécia?</p>
+        <label><input type="radio" name="q4" value="Ibiza"> Ibiza</label>
+        <label><input type="radio" name="q4" value="Creta"> Creta</label>
+        <label><input type="radio" name="q4" value="Sardenha"> Sardenha</label>
+        <label><input type="radio" name="q4" value="Maiorca"> Maiorca</label>
+      </div>
+
+      <!-- Pergunta 5 -->
+      <div class="question-card">
+        <p>5. Em que continente se localiza a Grécia?</p>
+        <label><input type="radio" name="q5" value="Ásia"> Ásia</label>
+        <label><input type="radio" name="q5" value="Europa"> Europa</label>
+        <label><input type="radio" name="q5" value="África"> África</label>
+        <label><input type="radio" name="q5" value="América"> América</label>
+      </div>
+
+      <!-- Pergunta 6 -->
+      <div class="question-card">
+        <p>6. Que mar banha a Grécia?</p>
+        <label><input type="radio" name="q6" value="Mar Báltico"> Mar Báltico</label>
+        <label><input type="radio" name="q6" value="Mar Mediterrâneo"> Mar Mediterrâneo</label>
+        <label><input type="radio" name="q6" value="Mar do Norte"> Mar do Norte</label>
+        <label><input type="radio" name="q6" value="Mar Cáspio"> Mar Cáspio</label>
+      </div>
+
+    <button id="submit-button" type="submit" formaction="/html/quiz-result.html">Submit</button>    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <img src="/assets/img/logo.png" alt="Swift logo" class="logo">
+    <div>Email: <p>caldas@swift.com</p></div>
+    <div>Location: <p>Porto</p></div>
+    <div>Contact: <p>+351 903510863</p></div>
+  </footer>
+
+    <script src="/js/views/MenuViews.js"></script>
+</body>
+</html>

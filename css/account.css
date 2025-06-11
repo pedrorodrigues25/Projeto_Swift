@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100..900&display=swap');
+
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #f4f6fc;
+  color: #001542;
+}
+
+/* TIPOGRAFIA */
+h1, h2, h3 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 700;
+}
+
+/* HEADER */
+header {
+  padding: 20px 50px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #001542;
+  font-size: 14px;
+}
+
+.logo {
+  height: 30px;
+}
+
+/* MENU DROPDOWN */
+.menu-icon {
+  margin-left: 25px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #001542;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 10px;
+  display: none;
+  z-index: 999;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu img {
+  height: 20px;
+  margin-left: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ACCOUNT SECTION */
+.account-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* Header da Conta */
+.account-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.profile-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #001542;
+}
+
+.account-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.account-header p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Secção com vídeo e overlay de texto */
+.account-info-video-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  height: 240px;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 21, 66, 0.6);
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-overlay-text p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.video-overlay-text ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 20px 0;
+}
+
+.video-overlay-text li {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.video-overlay-text h3 {
+  font-size: 20px;
+  margin-top: auto;
+}
+
+/* Botões da conta */
+.account-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.account-actions button {
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background: #001542;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.account-actions button:hover {
+  background: #003ba0;
+}
+
+.account-actions .logout {
+  background-color: #d23b3b;
+}
+
+.account-actions .logout:hover {
+  background-color: #b23232;
+}
+
+/* FOOTER */
+
+footer {
+  background: #00132e;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 40px auto 20px auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+footer div {
+  margin: 10px 0;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.profile-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-wrapper:hover .overlay {
+  opacity: 1;
+}
+
+.plus-icon {
+  color: #ccc;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}

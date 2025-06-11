@@ -1,24 +1,29 @@
 let users;
 
-// CARREGAR UTILIZADORES DA LOCALSTORAGE
+// Inicializar utilizadores da LocalStorage
 export function init() {
   users = localStorage.users ? JSON.parse(localStorage.users) : [];
 }
 
-// ADICIONAR UTILIZADOR
-export function add(username, password) {
+// Adicionar novo utilizador
+export function add(userId, username, password, email, coverPhoto = '', birthDate = '', phoneNumber = '', defaultPaymentMethod = '', gender = '', quizzes = []) {
   if (users.some((user) => user.username === username)) {
     throw Error(`User with username "${username}" already exists!`);
-  } else {
-    users.push(new User(username, password));
-    localStorage.setItem("users", JSON.stringify(users));
   }
+  if (users.some((user) => user.email === email)) {
+  throw Error(`User with email "${email}" already exists!`);
 }
 
-// LOGIN DO UTILIZADOR
-export function login(username, password) {
+  users.push(new User(userId, username, password, email, coverPhoto, birthDate, phoneNumber, defaultPaymentMethod, gender, quizzes));
+  localStorage.setItem("users", JSON.stringify(users));
+}
+
+// Login do utilizador
+export function login(usernameOrEmail, password) {
   const user = users.find(
-    (user) => user.username === username && user.password === password
+    (user) =>
+      (user.username === usernameOrEmail || user.email === usernameOrEmail) &&
+      user.password === password
   );
   if (user) {
     sessionStorage.setItem("loggedUser", JSON.stringify(user));
@@ -28,25 +33,21 @@ export function login(username, password) {
   }
 }
 
-// LOGOUT DO UTILIZADOR
+// Logout
 export function logout() {
   sessionStorage.removeItem("loggedUser");
 }
 
-// VERIFICA EXISTÊNCIA DE ALGUÉM AUTENTICADO
+// Verifica se alguém está autenticado
 export function isLogged() {
   return sessionStorage.getItem("loggedUser") ? true : false;
 }
 
-// DEVOLVE UTILZIADOR AUTENTICADO
+// Devolve o utilizador autenticado
 export function getUserLogged() {
   return JSON.parse(sessionStorage.getItem("loggedUser"));
 }
 
-
-/**
- * CLASSE QUE MODELO UM UTILIZADOR NA APLICAÇÃO
- */
 class User {
   userId = "";
   username = "";
@@ -58,13 +59,12 @@ class User {
   defaultPaymentMethod = "";
   gender = "";
   quizzes = [
-    quiz = {
-      idQuiz: "",
-      correctAnswers: "",
-      quizMiles: ""
-    }
-  ]
-
+  {
+    idQuiz: "",
+    correctAnswers: "",
+    quizMiles: ""
+  }
+];
 
   constructor(userId, username, password, email, coverPhoto, birthDate, phoneNumber, defaultPaymentMethod, gender, quizzes) {
     this.userId = userId;
@@ -79,6 +79,5 @@ class User {
     this.quizzes = quizzes;
   }
 }
-
 
 

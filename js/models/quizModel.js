@@ -1,65 +1,27 @@
 /**
- * CLASSE MODELO DE QUIZ
+ * CLASSE MODELO DE DESTINOS
  */
-class Quiz{
-  idQuiz = "";
-  quizName = "";
-  numMiles = "";
-  questions = [
-    {
-        questionDescription: "",
-        response1: "",
-        response1: "",
-        response1: "",
-        response1:"",
-        correctResponse: "",
-    },
-    {
-        questionDescription: "",
-        response1: "",
-        response1: "",
-        response1: "",
-        response1:"",
-        correctResponse: "",
-    },
-    {
-        questionDescription: "",
-        response1: "",
-        response1: "",
-        response1: "",
-        response1:"",
-        correctResponse: "",
-    },
-    {
-        questionDescription: "",
-        response1: "",
-        response1: "",
-        response1: "",
-        response1:"",
-        correctResponse: "",
-    },
-    {
-        questionDescription: "",
-        response1: "",
-        response1: "",
-        response1: "",
-        response1:"",
-        correctResponse: "",
-    },
-    {
-        questionDescription: "",
-        response1: "",
-        response1: "",
-        response1: "",
-        response1:"",
-        correctResponse: "",
+
+class destination{
+  idDestination = "";
+  name = "";
+  flights = [
+    flight = {
+      airCompany: "",
+      price: "",
+      departureAirport: "",
+      arrivalAirport: "",
+      flightTime: ""
     }
   ]
 
-  constructor(idQuiz, quizName, numMiles, questions){
-    this.idQuiz = idQuiz;
-    this.quizName = quizName;
-    this.numMiles = numMiles;
-    this.question = question;
+  constructor(idDestination, name, airCompany, price, departureAirport, arrivalAirport, flightTime){
+    this.idDestination = idDestination;
+    this.name = name;
+    this.airCompany = airCompany;
+    this.price = price;
+    this.departureAirport = departureAirport;
+    this.arrivalAirport = arrivalAirport;
+    this.flightTime = flightTime;
   }
 }

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+</head>
+<body>
+
+    <!-- include A-Frame obviously 
+        <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script> -->
+        <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="Check-in" src='/VR/assets/3D_models/airport_foot_traffic/Aeroporto-2.glb'></a-asset-item>
+            <a-asset-item id="747" src='/VR/assets/3D_models/boeing_747_with_interior_free/scene.gltf'></a-asset-item>
+            <a-asset-item id="tree" src="/VR/assets/3D_models/tree_elm/scene.gltf"></a-asset-item>
+            <img src="/VR/assets/img/textures/sky.jpg" id="sky">
+        </a-assets>
+
+        
+        <a-sky src="#sky"></a-sky>
+        <a-plane width="1000" height="1000" color="#263e0f" position="0 -0.400 0" rotation="-90 0 0"></a-plane>
+
+        <a-text value="Bem-vindo!" position="-9.130 0.060 0.520" rotation=" 0 90 0" color="#FFB30D" scale="0.7 0.7 0.7"></a-text>
+        <a-text value="Siga as setas para um guia de um aeroporto em VR" position="-9.130 -0.085 0.520" rotation=" 0 90 0" color="#ffffff" scale="0.2 0.2 0.2"></a-text>
+
+        <a-text value="Self Check-in" position="-10.816 -0.014 2.354" rotation="0 130 0" color="#FFB30D" scale="0.35 0.35 0.35"></a-text>
+        <a-text value="Counter check-in" position="-11.230 -0.042 -0.551" rotation="0 90 0" color="#FFB30D" scale="0.35 0.35 0.35"></a-text>
+        <a-text value="Security" position="-12.620 -0.014 0" rotation="0 90 0" color="#FFB30D" scale="0.7 0.7 0.7"></a-text>
+        <a-text value="Remote gate area" position="-15.565 -0.059 1.413" rotation="0 90 0" color="#FFB30D" scale="0.35 0.35 0.35"></a-text>
+        <a-text value="Where people wait to board a bus that will take them to the plane" position="-15.565 -0.159 1.540" rotation=" 0 90 0" color="#ffffff" scale="0.2 0.2 0.2"></a-text>
+        <a-text value="Jet bridge gate area" position="-16.008 0.299 1.324" rotation="0 90 0" color="#FFB30D" scale="0.35 0.35 0.35"></a-text>
+        <a-text value="Airport ramp or apron" position="-19.585 -0.066 0.143" rotation="0 90 0" color="#FFB30D" scale="0.35 0.35 0.35"></a-text>
+        <a-text value="This is where the airplane is loaded or unloaded, refueled, boarded and maintained." position="-19.585 -0.176  0.143" rotation=" 0 90 0" color="#ffffff" scale="0.2 0.2 0.2"></a-text>
+        <a-text value="Jet bridge " position="-17.837 0.516 1.384" rotation="0 90 0" color="#FFB30D" scale="0.35 0.35 0.35"></a-text>
+        <a-text value="This is one of the most common ways to board a airplane. It connects to the airplane after landing and allows passengers to disembark and board the airplane" position="-17.837 0.365  1.513" rotation=" 0 90 0" color="#ffffff" scale="0.2 0.2 0.2"></a-text>
+
+
+        <a-entity gltf-model='#Check-in' scale="1 1 1" position="-10 0 0"></a-entity>
+        <a-entity glTF-model='#tree' scale="0.3 0.3 0.3" position="-7.020 -0.370 5.935"></a-entity> 
+        <a-entity glTF-model='#tree' scale="0.3 0.3 0.3" position="-10.378 -0.370 4.209"></a-entity> 
+        <a-entity glTF-model='#tree' scale="0.3 0.3 0.3" position="-15.227 -0.370 4.438"></a-entity> 
+        <a-entity glTF-model='#tree' scale="0.3 0.3 0.3" position="-11.165 -0.370 7.821"></a-entity> 
+        <a-entity glTF-model='#tree' scale="0.3 0.3 0.3" position="-17.878 -0.370 -6.376"></a-entity> 
+        <a-entity glTF-model='#tree' scale="0.3 0.3 0.3" position="-9.104 -0.370 -4.209"></a-entity> 
+        <a-entity glTF-model='#tree' scale="0.3 0.3 0.3" position="-14.051 -0.370 -3.283"></a-entity> 
+        <a-entity glTF-model='#tree' scale="0.3 0.3 0.3" position="-11.165 -0.370 -7.632"></a-entity>
+
+
+        
+        <a-entity position="-8.662 0.459 -1.257">
+            <a-cylinder position="0 -0.741 0" height="0.3" radius="0.3" material="src:/VR/assets/img/textures/wall-texture.jpg; color: #ABB0AC"></a-cylinder>
+            <a-cylinder position="0 -0.655 0" height="0.2" radius="0.260" material="src:/VR/assets/img/textures/wall-texture.jpg; color: #ABB0AC"></a-cylinder>
+        </a-entity>
+        <a-box position="-8.444 -0.210 -1.051" rotation="0 46.320 0" height="0.080" width="0.120" depth="0.020" material="src:/VR/assets/img/textures/placa-estatua.png;"></a-box>
+
+        
+        <a-entity position="-8.674 0 -1.255" animation="property: rotation; to: 0 360 0; loop: true; dur: 2000; easing:linear">
+
+
+            <a-entity position="0.260 0.599 0.250" rotation="0 45 0" scale="0.1 0.1 0.1">
+                <!-- cabeça -->
+            <a-sphere position="0 0 -3.583" radius="1" color="#c68642"></a-sphere>
+            <!-- pescoço -->
+            <a-cone color="#c68642" height="2" radius-bottom="0.5" radius-top="0" position="0 -0.5 -3.583"></a-cone>
+            <!-- tronco tshirt -->
+            <a-cylinder color="green" height="3" radius="0.5" open-ended="false" side="double" position="0.008 -3 -3.587"></a-cylinder>
+            <!-- nariz -->
+            <a-cone color="#c68642" height="0.5" radius-bottom="0.1" radius-top="0" position="0 -0.173 -2.712" rotation="90 0 0"></a-cone>
+            <!-- braços -->
+            <a-torus color="green" radius="0.5" tube="0.1" arc="180" position="-0.251 -2.206 -3.064" rotation="90 0 90"></a-torus>
+            <a-torus color="green" radius="0.5" tube="0.1" arc="180" position="0.381 -2.630 -3.163" rotation="-45 0 -90"></a-torus>
+            <!-- mãos -->
+            <a-sphere color="#c68642" radius="0.5" position="-0.330 -2.274 -2.540"></a-sphere>
+            <a-sphere color="#c68642" radius="0.5" position="0.252 -3.059 -2.843"></a-sphere>
+            <!-- pernas -->
+            <a-cylinder color="black" height="3" radius="0.5" open-ended="false" side="double" position="-0.247 -5.686 -3.594" scale="0.5 0.8 0.5"></a-cylinder>
+            <a-cylinder color="black" height="3" radius="0.5" open-ended="false" side="double" position="0.242 -5.681 -3.612" scale="0.5 0.8 0.5"></a-cylinder>
+            <!-- cintura -->
+            <a-sphere color="black" position="-0.013 -4.525 -3.583" scale="0.5 0.5 0.5" radius="1"> </a-sphere><!-- cintura -->
+            <!-- cinto -->
+            <a-torus color="yellow" position="0.015 -4.453 -3.579" rotation="90 0 0" scale="0.4 0.4 0.4" radius="1"></a-torus>
+            <a-box color="black" position="0.016 -4.449 -3.124" scale="0.2 0.2 0.2"></a-box>
+            <!-- colar -->
+            <a-ring color="#999B9B" position="-0.005 -1.346 -3.461" rotation="-70 0 0" scale="0.58 0.58 1" ></a-ring>
+            <!-- olhos -->
+            <a-sphere color="white" scale="0.1 0.1 0.1" position="-0.418 0.112 -2.715" ></a-sphere>
+            <a-sphere color="white" scale="0.1 0.1 0.1" position="0.418 0.112 -2.715"></a-sphere>
+            <a-sphere color="black" scale="0.05 0.05 0.05" position="-0.418 0.112 -2.660"></a-sphere>
+            <a-sphere color="black" scale="0.05 0.05 0.05" position="0.418 0.112 -2.660"></a-sphere>
+            <!-- fones -->
+            <a-cone color="red" position="0.96 0.032 -3.570" scale="0.2 0.2 0.2" rotation="0 0 90"></a-cone>
+            <a-cone color="red" position="-0.96 0.032 -3.570" scale="0.2 0.2 0.2" rotation="0 0 -90"></a-cone>
+            <a-sphere color="red" position="0.96 0.032 -3.570" scale="0.2 0.2 0.2"></a-sphere>
+            <a-sphere color="red" position="-0.96 0.032 -3.570" scale="0.2 0.2 0.2"></a-sphere>
+            <a-torus color="red" radius="0.9" position="0 0.182 -3.573" arc="180" scale="0.8 0.75 1"></a-torus>
+            <a-cone color="red" position="-0.862 -0.002 -3.563" rotation="0 0 -90" scale="0.3 0.3 0.3"></a-cone>
+            <a-cone color="red" position="0.862 -0.002 -3.563" rotation="0 0 90" scale="0.3 0.3 0.3"></a-cone>
+            <!-- cabelo -->
+            <a-sphere color="#E3B94B" position="-0.00705 0.48616 -3.94415" radius="1.1" scale="1 0.4 0.6"></a-sphere>
+            <a-sphere color="#E3B94B" position="-0.00705 0.48616 -3.27974" radius="1.1" scale="0.7 0.4 0.6"></a-sphere>  
+            <a-sphere color="#E3B94B" position="-0.01391 0.08789 -4.18869" radius="1.1" scale="0.8 0.4 0.6" material="" geometry=""></a-sphere>
+            <!--sapatos -->
+            <a-sphere color="gray" position ="0.241 -6.906 -3.335" scale="0.3 0.3 0.6"></a-sphere>  
+            <a-sphere color="gray" position ="-0.24 -6.906 -3.335" scale="0.3 0.3 0.6"></a-sphere> 
+            <a-box color="green" position="-0.38507 -6.906 -3.33499" scale="0.3 0.2 0.3" ></a-box>
+            <a-box color="green" position="0.38507 -6.906 -3.33499" scale="0.3 0.2 0.3" ></a-box>
+            <!-- boca -->
+            <a-torus color="#ffcbdb" arc="180" position="0 -0.402 -2.876" rotation="180 0 0" scale="0.3 0.2 0.3"></a-torus> 
+            <!-- bigode -->  
+            <a-torus color="#E3B94B" arc="180" position="0 -0.38147 -2.68207"  scale="0.2 0.1 0.2" ></a-torus> 
+            </a-entity>  
+      </a-entity>
+
+     <a-entity id="cameraRig" position="-6.206 0 0">
+        <a-entity 
+            camera 
+            look-controls 
+            wasd-controls
+            acceleration="0.0005"
+            position="0 0 0">
+            <!-- mouse cursor -->
+            <a-entity cursor="rayOrigin: mouse" 
+                    raycaster="objects: .clickable"
+                    position="0 0 -1" 
+                    geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
+                    material="color: black; shader: flat">
+            </a-entity>
+        </a-entity>
+        <a-entity 
+            sound="src: url(/VR/assets/audio/airport-34598.mp3); autoplay: true; loop: true; positional: false">
+        </a-entity>
+    </a-entity>
+
+        <!-- Gaze Cursor for VR/AR -->
+        <a-entity 
+          cursor="fuse: true; fuseTimeout: 1000" 
+          position="0 0 -1" 
+          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+          material="color: black; shader: flat">
+        </a-entity>
+      </a-entity>
+
+      <!-- Simple Button (in world) -->
+      <a-entity 
+        event-set__click="_event: click; position: -5.920 0.370 0.485; target: #cameraRig"
+        id="moveButton"
+        geometry="primitive: plane; height: 0.060; width: 0.100;"
+        material="color: #FF5722"
+        rotation="0 90 0"
+        position="-14.011 -0.123 1.403"
+        text="value: Climb; align: center; color: white; width:0.540;"
+        class="clickable">
+      </a-entity>
+
+
+      <a-entity 
+        event-set__click="_event: click; position: -5.920 0.370 0.485; target: #cameraRig"
+        id="moveButtonDown"
+        geometry="primitive: plane; height: 0.060; width: 0.100;"
+        material="color: #FF5722"
+        rotation="0 270 0"
+        position="-15.305 0.370 -0.062"
+        text="value: Go down; align: center; color: white; width:0.540;"
+        class="clickable">
+      </a-entity>
+        <!-- <a-box position="-13.90 0.312 2.506" src="/VR/assets/img/textures/wall-texture.jpg" scale="8.710 1.620 0.130" width="1" height="1" depth="1" color="#ABB0AC"></a-box> -->
+
+        <!-- <a-entity id="camera"camera look-controls wasd-controls position="-6.206 0 0" rotation="0 90 0" acceleration="1000"></a-entity> -->
+    </a-scene>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('#moveButton').addEventListener('click', () => {
+        const rig = document.querySelector('#cameraRig');
+        rig.setAttribute('position', { x: -8.356, y: 0.370, z: 0.317 });
+        });
+    });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('#moveButtonDown').addEventListener('click', () => {
+        const rig = document.querySelector('#cameraRig');
+        rig.setAttribute('position', { x: -12.577, y: -0.154, z: -0.062 });
+        });
+    });
+    </script>
+
+    <script>
+        document.addEventListener('click', function oncePlay() {
+            const bg = document.querySelector('#bg-sound');
+            bg.components.sound.playSound();
+            document.removeEventListener('click', oncePlay);
+        });
+    </script>
+
+</body>
+</html>

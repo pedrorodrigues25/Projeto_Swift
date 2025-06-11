@@ -1,0 +1,8 @@
+Model Information:
+* title:	Foam RC Plane
+* source:	https://sketchfab.com/3d-models/foam-rc-plane-b4f51a26e9204261a9b46c242e348b72
+* author:	Ax2050 (https://sketchfab.com/Ax2050)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

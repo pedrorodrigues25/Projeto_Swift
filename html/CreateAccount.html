@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account - Swift</title>
+  <link rel="stylesheet" href="/css/createacount.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="illustration">
+      <img src="/assets/img/fundologin.png" alt="Plane flying around globe">
+    </div>
+    <div class="login-box">
+      <button class="close-btn">&#x2715;</button>
+      <h2>Create account</h2>
+      <form id="createAccountForm">
+        <div class="input-group">
+          <input type="text" placeholder="First Name" id="firstName" required />
+          <input type="text" placeholder="Last Name" id="lastName" required />
+        </div>
+        <input type="text" placeholder="Username" id="username" required />
+        <input type="email" placeholder="Email" id="email" required />
+        <input type="password" placeholder="Password" id="password" required />
+        <button type="submit" class="primary-btn">Create Account</button>
+      </form>
+      <div class="social-login">
+        <button class="gmail-btn">Sign up with Gmail</button>
+        <button class="facebook-btn">Sign up with Facebook</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/js/views/CreateAccountViews.js"></script>
+  <script type="module" src="/js/models/UserModel.js"></script>
+
+  <!-- Botão fechar -->
+  <script>
+    document.querySelector('.close-btn').onclick = function() {
+      window.location.href = '/index.html';
+    };
+  </script>
+</body>
+</html>

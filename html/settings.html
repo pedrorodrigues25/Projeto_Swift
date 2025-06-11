@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swift - Swift</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/settings.css">
+  <link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/html/home.html">Home</a>
+        <a href="/html/flights.html">Flights</a>
+      </div>
+      <img src="/assets/img/logoE.png" alt="Swift logo" class="logo">
+      <div class="nav-right">
+        <a href="/html/discover.html">Discover</a>
+        <a href="/html/review.html">Reviews</a>
+
+        <!-- ENVOLVENDO O MENU E O ÍCONE -->
+        <div class="menu-wrapper">
+          <div class="menu-icon" id="menu-icon">☰</div>
+          <div class="dropdown-menu hidden" id="dropdownMenu">
+            <ul>
+              <li>
+                <a href="/html/yourFlights.html"><span>Your Flights</span></a>
+                <img src="/assets/img/iconFlights.png" alt="Your flights icon">
+              </li>
+              <li>
+                <a href="/html/likedDestination.html"><span>Liked Destinations</span></a>
+                <img src="/assets/img/like.png" alt="Liked destinations icon">
+              </li>
+              <li>
+                <a href="/html/login.html"><span>Log in</span></a>
+                <img src="/assets/img/login.png" alt="Login icon">
+              </li>
+              <li>
+                <a href="/html/account.html"><span>Account</span></a>
+                <img src="/assets/img/people.png" alt="Account icon">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<main class="account-settings">
+    <h1><a href="/html/account.html">Account</a> <span>&gt; Settings</span></h1>
+
+    <!-- Personal Details -->
+    <section class="details-section">
+      <div class="form-row">
+        <div class="input-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" placeholder="Full Name" />
+        </div>
+
+        <div class="input-group">
+          <label for="display-name">Display name:</label>
+          <input type="text" id="display-name" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="e.g. anne@gmail.com" />
+        </div>
+
+        <div class="input-group">
+  <label>Date of birth:</label>
+  <div class="dob-group">
+    <select id="dob-day">
+      <option value="">Day</option>
+    </select>
+    <select id="dob-month">
+      <option value="">Month</option>
+    </select>
+    <select id="dob-year">
+      <option value="">Year</option>
+    </select>
+  </div>
+</div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="phone-label">
+            Phone Number:
+            <div class="phone-input">
+              <span id="country-flag" class="flag">+351</span>
+              <input type="tel" id="phone" placeholder="123 456 789" />
+            </div>
+          </label>
+        </div>
+
+        <div class="input-group sex-group">
+          <label>Sex:</label>
+          <label><input type="radio" name="sex" value="male" /> Male</label>
+          <label><input type="radio" name="sex" value="female" /> Female</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security Settings -->
+    <section class="security-section">
+      <button class="setting-btn">
+        <span>🔒 Two-factor authentication</span>
+        <span>&gt;</span>
+      </button>
+      <button class="setting-btn">
+        <span>💻 Devices</span>
+        <span>&gt;</span>
+      </button>
+    </section>
+
+    <!-- Payment Method -->
+    <section class="payment-section">
+      <h2>Default Payment Method</h2>
+      <div class="payment-options">
+        <label>
+          <input type="radio" name="payment" value="credit" />
+          Credit Card
+        </label>
+        <label>
+          <input type="radio" name="payment" value="paypal" />
+          PayPal
+        </label>
+        <label>
+          <input type="radio" name="payment" value="apple" />
+          <img src="/assets/img/apple.png"  class="pay-icon" />
+        </label>
+        <label>
+          <input type="radio" name="payment" value="google" />
+          <img src="/assets/img/google.png"  class="pay-icon" />
+        </label>
+      </div>
+    </section>
+
+    <button class="delete-account">🗑️ Delete Account</button>
+
+    <button id="saveSettingsBtn" class="save-btn">💾 Save Settings</button>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <img src="/assets/img/logo.png" alt="Swift logo" class="logo">
+    <div>Email:<p>caldas@swift.com</p></div>
+    <div>Location: <p>Porto</p></div>
+    <div>Contact: <p>+351 903510863</p> </div>
+  </footer>
+
+  <script type="module" src="/js/views/SettingsViews.js"></script>
+  <script src="/js//views/MenuViews.js"></script>
+</body>
+</html>

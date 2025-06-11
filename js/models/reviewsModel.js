@@ -39,5 +39,3 @@ class reviewComments{
         this.text = text;
     }
 }
-
-
