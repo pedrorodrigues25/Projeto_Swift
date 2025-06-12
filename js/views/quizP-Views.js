@@ -32,16 +32,20 @@ function loadQuizPage() {
 
   const suggestedContainer = document.getElementById("quiz-suggested");
   suggestedQuizzes.forEach(q => {
-    const div = document.createElement("div");
-    div.classList.add("quiz-suggested-card");
-    div.innerHTML = `
-      <img src="${q.img}" alt="${q.name}">
-      <div class="quiz-title">Quiz: ${q.name}</div>
-      <div class="quiz-reward">Win up to ${q.reward} Miles</div>
-      <button class="play-btn">Play Now</button>
-    `;
-    suggestedContainer.appendChild(div);
+  const div = document.createElement("div");
+  div.classList.add("quiz-suggested-card");
+  div.innerHTML = `
+    <img src="${q.img}" alt="${q.name}">
+    <div class="quiz-title">Quiz: ${q.name}</div>
+    <div class="quiz-reward">Win up to ${q.reward} Miles</div>
+    <button class="play-btn">Play Now</button>
+  `;
+  // Adiciona o event listener ao botão
+  div.querySelector(".play-btn").addEventListener("click", () => {
+    window.location.href = "/html/quiz-info.html";
   });
+  suggestedContainer.appendChild(div);
+});
 }
 
 document.addEventListener("DOMContentLoaded", loadQuizPage);
