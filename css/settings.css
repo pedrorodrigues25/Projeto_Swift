@@ -202,3 +202,29 @@ footer div {
   margin-right: 20px;
   vertical-align: middle;
 }
+
+/* Save Settings button */
+.save-btn {
+  background: #ffc107; /* Amarelo */
+  color: white; /* Cor do texto, pode ser preto se preferires no amarelo */
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 20px; /* Para dar espaço, como o delete-account */
+  cursor: pointer;
+  /* Adiciona a transição se quiseres um efeito ao passar o rato */
+  transition: background 0.3s ease;
+}
+
+.save-btn:hover {
+  background: #e0a800; /* Um amarelo um pouco mais escuro para o hover */
+}
+
+
+
+a {
+  text-decoration: none;
+  color: #001542;
+}

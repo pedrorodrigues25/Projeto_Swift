@@ -10,15 +10,20 @@ export function add(userId, username, password, email, coverPhoto = '', birthDat
   if (users.some((user) => user.username === username)) {
     throw Error(`User with username "${username}" already exists!`);
   }
+  if (users.some((user) => user.email === email)) {
+  throw Error(`User with email "${email}" already exists!`);
+}
 
   users.push(new User(userId, username, password, email, coverPhoto, birthDate, phoneNumber, defaultPaymentMethod, gender, quizzes));
   localStorage.setItem("users", JSON.stringify(users));
 }
 
 // Login do utilizador
-export function login(username, password) {
+export function login(usernameOrEmail, password) {
   const user = users.find(
-    (user) => user.username === username && user.password === password
+    (user) =>
+      (user.username === usernameOrEmail || user.email === usernameOrEmail) &&
+      user.password === password
   );
   if (user) {
     sessionStorage.setItem("loggedUser", JSON.stringify(user));
@@ -54,12 +59,12 @@ class User {
   defaultPaymentMethod = "";
   gender = "";
   quizzes = [
-    quiz = {
-      idQuiz: "",
-      correctAnswers: "",
-      quizMiles: ""
-    }
-  ]
+  {
+    idQuiz: "",
+    correctAnswers: "",
+    quizMiles: ""
+  }
+];
 
   constructor(userId, username, password, email, coverPhoto, birthDate, phoneNumber, defaultPaymentMethod, gender, quizzes) {
     this.userId = userId;
@@ -74,3 +79,5 @@ class User {
     this.quizzes = quizzes;
   }
 }
+
+

@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const success = userModel.login(username, password);
       if (success) {
-        alert('Login successful!');
-        window.location.href = '/html/account.html';
+        alert('Login succeeded! Redirecting to home ✈️');
+        window.location.href = '/html/home.html';
       }
     } catch (error) {
       alert(error.message);

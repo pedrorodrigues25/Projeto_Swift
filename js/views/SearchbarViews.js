@@ -80,32 +80,64 @@ function selectClass(className) {
   document.getElementById('selected-class').textContent = className;
 }
 
-// Placeholder for search button
-function performSearch() {
-  alert('Search triggered!');
-}
 document.addEventListener("DOMContentLoaded", function () {
-  const today = new Date().toISOString().split('T')[0];
-  const departureInput = document.getElementById('departure-picker');
+  const selectedDeparture = document.getElementById('selected-departure');
+  const selectedArrival = document.getElementById('selected-arrival');
   const arrivalInput = document.getElementById('arrival-picker');
-  
 
-  // Limita a datas futuras
-  departureInput.setAttribute('min', today);
-  arrivalInput.setAttribute('min', today);
+  // Iniciar Flatpickr para Departure
+  flatpickr("#departure-picker", {
+    dateFormat: "Y-m-d",
+    minDate: "today",
+    onChange: function(selectedDates, dateStr) {
+      selectedDeparture.textContent = formatDate(dateStr);
 
-  // Eventos de mudança
-  departureInput.addEventListener('change', function () {
-    const formatted = formatDate(this.value);
-    document.getElementById('selected-departure').textContent = formatted;
-    closeAllDropdowns();
+      // Ativar arrival
+      arrivalInput.disabled = false;
+
+      // Atualizar minDate da arrival
+      if (arrivalInput._flatpickr) {
+        arrivalInput._flatpickr.set("minDate", dateStr);
+      }
+
+      // Limpar arrival se for inválido
+      if (arrivalInput.value && arrivalInput.value < dateStr) {
+        arrivalInput._flatpickr.clear();
+        selectedArrival.textContent = "Select date";
+      }
+
+      closeAllDropdowns();
+    }
   });
 
-  arrivalInput.addEventListener('change', function () {
-    const formatted = formatDate(this.value);
-    document.getElementById('selected-arrival').textContent = formatted;
-    closeAllDropdowns();
+  const departureInput = document.getElementById('departure-picker');
+
+  departureInput.addEventListener("input", function () {
+    if (!this.value) {
+      arrivalInput.disabled = true;
+      if (arrivalInput._flatpickr) {
+        arrivalInput._flatpickr.clear();
+      }
+      selectedArrival.textContent = "Select date";
+    }
   });
+
+  // Iniciar Flatpickr para Arrival
+  flatpickr("#arrival-picker", {
+    dateFormat: "Y-m-d",
+    onChange: function(selectedDates, dateStr) {
+      selectedArrival.textContent = formatDate(dateStr);
+      closeAllDropdowns();
+    }
+  });
+
+  // Função auxiliar para formatação
+  function formatDate(dateStr) {
+    const date = new Date(dateStr);
+    const options = { day: 'numeric', month: 'short', year: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+  }
+});
 
   window.toggleDropdown = function(id) {
     closeAllDropdowns();
@@ -126,15 +158,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const options = { day: 'numeric', month: 'short', year: 'numeric' };
     return date.toLocaleDateString('en-US', options);
   }
-});
 
 document.addEventListener("DOMContentLoaded", function () {
   // Eventos de abertura de dropdowns
   document.getElementById('whereto-toggle').addEventListener('click', () => toggleDropdown('whereto-dropdown'));
-  document.getElementById('departure-toggle').addEventListener('click', () => toggleDropdown('departure-dropdown'));
-  document.getElementById('arrival-toggle').addEventListener('click', () => toggleDropdown('arrival-dropdown'));
+  document.getElementById('departure-toggle').addEventListener('click', () => {
+    toggleDropdown('departure-dropdown');
+    const dp = document.getElementById("departure-picker")._flatpickr;
+    if (dp) dp.open();  // Abre o calendário ao clicar
+  });
+
+  document.getElementById('arrival-toggle').addEventListener('click', () => {
+    const departureText = document.getElementById('selected-departure').textContent.trim();
+    if (departureText === "Select date") {
+      alert("Please choose a departure date first.");
+      return;
+    }
+
+    toggleDropdown('arrival-dropdown');
+    const ap = document.getElementById("arrival-picker")._flatpickr;
+    if (ap) ap.open();  // Abre o calendário ao clicar
+  });
+
   document.getElementById('travelers-toggle').addEventListener('click', () => toggleDropdown('travelers-dropdown'));
   document.getElementById('class-toggle').addEventListener('click', () => toggleDropdown('class-dropdown'));
+  document.getElementById('turismo-toggle').addEventListener('click', () => toggleDropdown('turismo-dropdown'));
 
   // Eventos nos botões de contar pessoas
   document.querySelectorAll('.count-btn').forEach(btn => {
@@ -156,27 +204,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Opções de destino
   document.querySelectorAll('.destination-option').forEach(option => {
-  option.addEventListener('click', () => {
-    const destination = option.getAttribute('data-destination');
-    document.getElementById('selected-destination').textContent = destination;
-    closeAllDropdowns();
+    option.addEventListener('click', () => {
+      const destination = option.getAttribute('data-destination');
+      document.getElementById('selected-destination').textContent = destination;
+      closeAllDropdowns();
+    });
   });
-});
+
+  // Opções de turismo
+  document.querySelectorAll('.turismo-option').forEach(option => {
+    option.addEventListener('click', () => {
+      const turismo = option.getAttribute('data-airline');
+      document.getElementById('selected-airline').textContent = turismo;
+      closeAllDropdowns();
+    });
+  });
 
   // Botão de pesquisa
   document.getElementById('search-btn').addEventListener('click', performSearch);
 });
 
-document.getElementById("search-btn").addEventListener("click", () => {
+function performSearch() {
   const destination = document.getElementById("selected-destination").textContent.trim();
   const departureDate = document.getElementById("selected-departure").textContent.trim();
   const arrivalDate = document.getElementById("selected-arrival").textContent.trim();
   const travelers = document.getElementById("selected-travelers").textContent.trim();
   const travelClass = document.getElementById("selected-class").textContent.trim();
+  const turismo = document.getElementById("selected-airline").textContent.trim();
 
-  if (destination === "e.g Paris") {
-    alert("Please select a destination.");
+  // Verificar se algum campo está por preencher
+  const missingFields = [];
+
+  if (destination === "e.g Paris") missingFields.push("destination");
+  if (departureDate === "Select date") missingFields.push("departure date");
+  if (arrivalDate === "Select date") missingFields.push("arrival date");
+  if (!travelers || travelers === "0 Travelers") missingFields.push("travelers");
+  if (!travelClass) missingFields.push("class");
+
+  if (missingFields.length > 0) {
+    alert(`Please complete the following before searching:\n- ${missingFields.join("\n- ")}`);
     return;
   }
 
@@ -186,7 +254,8 @@ document.getElementById("search-btn").addEventListener("click", () => {
     arrival: arrivalDate,
     travelers,
     class: travelClass,
+    turismo
   }).toString();
 
   window.location.href = `/html/destination.html?${queryString}`;
-});
+}

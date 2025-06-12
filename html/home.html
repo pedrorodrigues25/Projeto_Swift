@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
   <header>
@@ -81,7 +82,7 @@
           <span class="input-value" id="selected-departure">Select date</span>
         </div>
         <div class="dropdown calendar-dropdown" id="departure-dropdown" style="display: none;">
-          <input type="date" id="departure-picker" min="">
+          <input type="text" id="departure-picker" min="">
         </div>
       </div>
 
@@ -93,7 +94,7 @@
           <span class="input-value" id="selected-arrival">Select date</span>
         </div>
         <div class="dropdown calendar-dropdown" id="arrival-dropdown" style="display: none;">
-          <input type="date" id="arrival-picker" min="">
+          <input type="text" id="arrival-picker" min="">
         </div>
       </div>
 
@@ -140,6 +141,22 @@
           <div class="class-option" data-class="Economy">Economy</div>
           <div class="class-option" data-class="Business">Business</div>
           <div class="class-option" data-class="First">First</div>
+        </div>
+      </div>
+
+      <!-- Turismo -->
+      <div class="input-box dropdown-wrapper" id="turismo-toggle">
+        <img src="/assets/img/turismo.png" alt="Turismo">
+        <div>
+          <span class="input-title">Tourism</span>
+          <span class="input-value" id="selected-airline">Any</span>
+        </div>
+        <div class="dropdown" id="turismo-dropdown" style="display: none;">
+          <div class="turismo-option" data-airline="Architectural">Architectural</div>
+          <div class="turismo-option" data-airline="Gastronomic">Gastronomic</div>
+          <div class="turismo-option" data-airline="Religious">Religious</div>
+          <div class="turismo-option" data-airline="Beachs">Beachs</div>
+          <div class="turismo-option" data-airline="Adventure">Adventure</div>
         </div>
       </div>
 
@@ -197,6 +214,7 @@
   </footer>
 
   <script src="/js/views/HerotextViews.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="/js/views/SearchbarViews.js"></script>
   <script src="/js/views/MenuViews.js"></script>
 </body>

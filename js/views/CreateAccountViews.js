@@ -16,6 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const userId = crypto.randomUUID();
 
+    // ✅ 1. Validação adicional de campos
+    if (username.length < 3 || password.length < 6) {
+      alert("Username must be at least 3 characters and password at least 6 characters.");
+      return;
+    }
+
+    // ✅ 2. Verificação de email duplicado (precisas também de atualizar o UserModel.js para suportar isto)
+    const allUsers = JSON.parse(localStorage.getItem("users") || "[]");
+    if (allUsers.some(user => user.email === email)) {
+      alert("An account with this email already exists.");
+      return;
+    }
+
     try {
       userModel.add(
         userId,
@@ -29,6 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
         '',     // gender
         []      // quizzes
       );
+
+      // ✅ 3. Redirecionamento suave (podes tirar o alert se quiseres)
       alert('Account created! You can now log in.');
       window.location.href = '/html/login.html';
     } catch (err) {

@@ -52,7 +52,13 @@
   <!-- Secção de Conta -->
   <section class="account-section">
     <div class="account-header">
-      <img id="profileImage" src="/assets/img/profileDefault.png" alt="Profile Image" class="profile-img">
+      <div class="profile-wrapper">
+        <img id="profileImage" src="/assets/img/profileDefault.png" alt="Profile Image" class="profile-img">
+        <div class="overlay">
+          <label for="profileUpload" class="plus-icon">+</label>
+        </div>
+        <input type="file" id="profileUpload" accept="image/*" style="display: none;">
+      </div>
       <div>
         <h2 id="username">Nome do utilizador</h2>
         <p id="email">email@email.com</p>
@@ -68,21 +74,23 @@
         <p>With Swift you’ve</p>
         <ul>
           <li id="quizCount">Completed 0 quizzes</li>
-          <li id="paymentMethod">Used default payment: —</li>
           <li id="birthDate">Born on: —</li>
+          <li id="gender">Gender: —</li>
+          <li id="phone">Phone: —</li>
+          <li id="paymentMethod">Used default payment: —</li>
         </ul>
         <h3>Keep flying</h3>
       </div>
     </div>
 
-    <!-- Botões -->
-    <div class="account-actions">
-      <button onclick="location.href='/html/yourFlightshtml'">Flights</button>
-      <button onclick="location.href='/html/quizP.html.html'">Quizzes</button>
-      <button onclick="location.href='/html/ReviewsP.html'">Your Reviews</button>
-      <button onclick="location.href='/html/settings.html'">Settings</button>
-      <button class="logout" id="logoutBtn">Log Out</button>
-    </div>
+      <!-- Botões -->
+      <div class="account-actions">
+        <button onclick="location.href='/html/yourFlights.html'">Flights</button>
+        <button onclick="location.href='/html/quizP.html'">Quizzes</button>
+        <button onclick="location.href='/html/ReviewsP.html'">Your Reviews</button>
+        <button onclick="location.href='/html/settings.html'">Settings</button>
+        <button class="logout" id="logoutBtn">Log Out</button>
+      </div>
   </section>
 
   <!-- Footer -->
@@ -94,7 +102,7 @@
   </footer>
 
   <!-- JS -->
-  <script src="/js/views/MenuViews.js"></script>
-  <script src="/js/views/AccountView.js"></script>
+  <script type="module" src="/js/views/MenuViews.js"></script>
+  <script type="module" src="/js/views/AccountViews.js"></script>
 </body>
 </html>

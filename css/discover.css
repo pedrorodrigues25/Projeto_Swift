@@ -181,7 +181,76 @@ header {
   color: white;
 }
 
-/* Footer*/
+.vr-section {
+  background: #fffbe6;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  margin: 40px auto 32px auto;
+  max-width: 700px;
+  padding: 32px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vr-content {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.vr-img {
+  width: 140px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.vr-text {
+  max-width: 400px;
+}
+
+.vr-text h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.vr-text p {
+  margin-bottom: 18px;
+  color: #444;
+}
+
+.vr-btns {
+  display: flex;
+  gap: 14px;
+}
+
+.vr-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.vr-btn {
+  background: #FFD600;
+  color: #111;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.vr-btn:hover {
+  background: #ffe066;
+  color: #000;
+}
+
+/* Footer */
 footer {
   background: #00132e;
   color: white;

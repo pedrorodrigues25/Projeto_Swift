@@ -1,33 +1,4 @@
-const phoneInput = document.getElementById("phone");
-const flagSpan = document.getElementById("country-flag");
-
-phoneInput.addEventListener("input", () => {
-  const value = phoneInput.value.trim();
-
-  const prefixes = {
-    "+1": "🇺🇸",
-    "+44": "🇬🇧",
-    "+33": "🇫🇷",
-    "+49": "🇩🇪",
-    "+351": "🇵🇹",
-    "+55": "🇧🇷",
-    "+34": "🇪🇸"
-  };
-
-  let found = false;
-
-  for (const prefix in prefixes) {
-    if (value.startsWith(prefix.replace("+", ""))) {
-      flagSpan.textContent = prefix;
-      found = true;
-      break;
-    }
-  }
-
-  if (!found) {
-    flagSpan.textContent = "+351";
-  }
-});
+import { getUserLogged } from '/js/models/UserModel.js';
 
 document.addEventListener('DOMContentLoaded', function () {
   // Dias
@@ -62,4 +33,85 @@ document.addEventListener('DOMContentLoaded', function () {
     opt.textContent = y;
     yearSelect.appendChild(opt);
   }
+
+  // ✅ LIGA O BOTÃO GUARDAR
+  const saveBtn = document.getElementById("saveSettingsBtn");
+  saveBtn.addEventListener("click", saveSettings);
 });
+
+function saveSettings() {
+  const fullName = document.getElementById("name").value.trim();
+  const displayName = document.getElementById("display-name").value.trim();
+  const email = document.getElementById("email").value.trim();
+
+  const dobDay = document.getElementById("dob-day").value;
+  const dobMonth = document.getElementById("dob-month").value;
+  const dobYear = document.getElementById("dob-year").value;
+
+  const phone = document.getElementById("phone").value.trim();
+
+  const genderInput = document.querySelector('input[name="sex"]:checked');
+  const paymentInput = document.querySelector('input[name="payment"]:checked');
+
+  let user = getUserLogged();
+  let updated = false;
+
+  // ⚡ Só atualiza se for diferente
+  if (fullName && fullName !== user.fullName) {
+    user.fullName = fullName;
+    updated = true;
+  }
+
+  if (displayName && displayName !== user.username) {
+    user.username = displayName;
+    updated = true;
+  }
+
+  if (email && email !== user.email) {
+    user.email = email;
+    updated = true;
+  }
+
+  if (dobDay && dobMonth && dobYear) {
+    const newDOB = `${dobDay}-${dobMonth}-${dobYear}`;
+    if (newDOB !== user.birthDate) {
+      user.birthDate = newDOB;
+      updated = true;
+    }
+  }
+
+  if (phone && phone !== user.phoneNumber) {
+    user.phoneNumber = phone;
+    updated = true;
+  }
+
+  if (genderInput && genderInput.value !== user.gender) {
+    user.gender = genderInput.value;
+    updated = true;
+  }
+
+  if (paymentInput && paymentInput.value !== user.defaultPaymentMethod) {
+    user.defaultPaymentMethod = paymentInput.value;
+    updated = true;
+  }
+
+  if (updated) {
+    // Atualizar sessionStorage
+    sessionStorage.setItem("loggedUser", JSON.stringify(user));
+
+    // Atualizar lista de users no localStorage
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    const index = users.findIndex(u => u.userId === user.userId);
+    if (index !== -1) {
+      users[index] = user;
+      localStorage.setItem("users", JSON.stringify(users));
+    }
+
+    alert("Alterações guardadas com sucesso!");
+  } else {
+    alert("Nenhuma alteração foi feita.");
+  }
+
+  // Redireciona sempre
+  window.location.href = "/html/account.html";
+}
