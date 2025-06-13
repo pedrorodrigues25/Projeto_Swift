@@ -13,11 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById("username").textContent = user.username;
   document.getElementById("email").textContent = user.email;
-  document.getElementById("profileImage").src = user.coverPhoto || "/assets/img/profileDefault.png";
+
+  // Verifica se há imagem de perfil no localStorage
+  const savedImage = localStorage.getItem('profileImage');
+  document.getElementById("profileImage").src =
+    savedImage || user.coverPhoto || "/assets/img/profileDefault.png";
+
   document.getElementById("quizCount").textContent = `Completed ${user.quizzes.length} quizzes`;
   document.getElementById("paymentMethod").textContent = `Used default payment: ${user.defaultPaymentMethod || "—"}`;
   document.getElementById("birthDate").textContent = `Born on: ${user.birthDate || "—"}`;
-
   document.getElementById("gender").textContent = `Gender: ${user.gender || "—"}`;
   document.getElementById("phone").textContent = `Phone: ${user.phoneNumber || "—"}`;
 
@@ -35,8 +39,11 @@ fileInput.addEventListener('change', (e) => {
   if (file) {
     const reader = new FileReader();
     reader.onload = function(event) {
-      profileImage.src = event.target.result;
-      // Aqui poderás também salvar esta imagem se quiseres!
+      const imageData = event.target.result;
+      profileImage.src = imageData;
+
+      // Guarda a imagem no localStorage
+      localStorage.setItem('profileImage', imageData);
     };
     reader.readAsDataURL(file);
   }
