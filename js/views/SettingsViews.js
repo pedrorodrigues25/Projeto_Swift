@@ -34,9 +34,12 @@ document.addEventListener('DOMContentLoaded', function () {
     yearSelect.appendChild(opt);
   }
 
-  // ✅ LIGA O BOTÃO GUARDAR
+  // Liga botões
   const saveBtn = document.getElementById("saveSettingsBtn");
   saveBtn.addEventListener("click", saveSettings);
+
+  const deleteBtn = document.querySelector(".delete-account");
+  deleteBtn.addEventListener("click", deleteAccount);
 });
 
 function saveSettings() {
@@ -56,7 +59,6 @@ function saveSettings() {
   let user = getUserLogged();
   let updated = false;
 
-  // ⚡ Só atualiza se for diferente
   if (fullName && fullName !== user.fullName) {
     user.fullName = fullName;
     updated = true;
@@ -96,10 +98,8 @@ function saveSettings() {
   }
 
   if (updated) {
-    // Atualizar sessionStorage
     sessionStorage.setItem("loggedUser", JSON.stringify(user));
 
-    // Atualizar lista de users no localStorage
     let users = JSON.parse(localStorage.getItem("users")) || [];
     const index = users.findIndex(u => u.userId === user.userId);
     if (index !== -1) {
@@ -112,6 +112,26 @@ function saveSettings() {
     alert("Nenhuma alteração foi feita.");
   }
 
-  // Redireciona sempre
   window.location.href = "/html/account.html";
+}
+
+function deleteAccount() {
+  if (!confirm("Tem a certeza que deseja eliminar a sua conta? Esta ação é irreversível.")) {
+    return;
+  }
+
+  const user = getUserLogged();
+
+  // Remover do localStorage
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+  users = users.filter(u => u.userId !== user.userId);
+  localStorage.setItem("users", JSON.stringify(users));
+
+  // Remover do sessionStorage
+  sessionStorage.removeItem("loggedUser");
+
+  alert("A sua conta foi eliminada com sucesso.");
+
+  // Redirecionar para login
+  window.location.href = "/html/login.html";
 }
