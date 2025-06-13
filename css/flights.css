@@ -56,6 +56,20 @@ header {
 
 /* SEARCH BAR */
 
+.search-btn{
+  background-color: #001542;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 15px;
+}
+.search-btn h4{
+  font-weight: 500;
+  color: #f6b200;
+  font-size: 15px;
+  text-align: center;
+}
+
 .search-section {
     margin-top: 80px;
     text-align: center;
@@ -228,25 +242,52 @@ h2 {
 }
 
 /* Offers */
-.offer-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-}
-
 .offer-card {
-  background: white;
-  border-radius: 10px;
-  padding: 10px;
-  text-align: center;
-  width: 120px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border: none;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  background-color: white;
 }
 
-.offer-card img {
+.offer-card:hover {
+  transform: translateY(-5px);
+}
+
+.offer-img {
+  height: 230px;
   width: 100%;
-  border-radius: 8px;
+  object-fit: cover;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.offer-title {
+  font-weight: 700;
+  color: #0d4f4b;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.offer-price {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #00314c;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .d-flex.flex-wrap.gap-4.justify-content-start {
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .offer-card {
+    flex: 0 0 auto;
+  }
 }
 
 /* New Experience */
