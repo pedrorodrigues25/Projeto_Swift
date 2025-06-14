@@ -98,6 +98,20 @@ header {
 
 /* SEARCH BAR */
 
+.search-btn{
+  background-color: #001542;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 15px;
+}
+.search-btn h4{
+  font-weight: 500;
+  color: #f6b200;
+  font-size: 15px;
+  text-align: center;
+}
+
 .search-section {
     margin-top: 80px;
     text-align: center;
