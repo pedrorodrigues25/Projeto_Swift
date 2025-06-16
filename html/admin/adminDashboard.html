@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/adminUsers.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+</head>
+<body class="bg-gray-100">
+  <header class="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+    <div class="logo">
+      <img src="/assets/img/logoE.png" alt="Swift Logo">
+    </div>
+    <nav class="space-x-6">
+      <a href="adminDashboard.html" class="text-gray-600 hover:text-black">Dashboard</a>
+      <a href="#" class="text-gray-600 hover:text-black">Data</a>
+      <a href="adminUsers.html" class="text-gray-600 hover:text-black">Users</a>
+    </nav>
+  </header>
+
+  <main class="p-6">
+    <h1 class="text-3xl font-bold mb-6">Dashboard</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div class="md:col-span-2 p-4 bg-white rounded-lg shadow">
+        <canvas id="salesChart"></canvas>
+        <div class="mt-4 flex space-x-2">
+          <button class="px-3 py-1 bg-blue-600 text-white rounded">30 days</button>
+          <button class="px-3 py-1 bg-gray-200 rounded">6 Months</button>
+          <button class="px-3 py-1 bg-gray-200 rounded">1 Year</button>
+        </div>
+      </div>
+      <div class="flex flex-col space-y-4">
+        <div class="p-4 bg-white rounded-lg shadow">
+          <p class="text-yellow-600 font-semibold">Monthly Visitors</p>
+          <p class="text-2xl font-bold">5430</p>
+        </div>
+        <div class="p-4 bg-white rounded-lg shadow">
+          <p class="text-green-600 font-semibold">Revenue</p>
+          <p class="text-2xl font-bold">15k &uarr;</p>
+        </div>
+        <div class="p-4 bg-white rounded-lg shadow">
+          <p class="text-yellow-600 font-semibold">Monthly Visitors</p>
+          <p class="text-2xl font-bold">5430</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="p-4 bg-white rounded-lg shadow flex justify-between items-center">
+        <span class="text-lg font-semibold">Best Offers</span>
+        <a href="#" class="text-blue-600">&gt;</a>
+      </div>
+      <div class="p-4 bg-white rounded-lg shadow flex justify-between items-center">
+        <span class="text-lg font-semibold">Manage Quizzes</span>
+        <a href="#" class="text-blue-600">&gt;</a>
+      </div>
+    </div>
+
+    <div class="mt-6 p-4 bg-white rounded-lg shadow">
+      <h2 class="text-xl font-bold mb-4">Customers demographics</h2>
+      <ul>
+        <li class="flex items-center justify-between py-2 border-b">
+          <span class="flex items-center space-x-2">
+            <img src="https://flagcdn.com/gb.svg" alt="UK" class="w-6 h-4">
+            <span>United Kingdom</span>
+          </span>
+          <span>5406 customers</span>
+        </li>
+        <li class="flex items-center justify-between py-2">
+          <span class="flex items-center space-x-2">
+            <img src="https://flagcdn.com/pt.svg" alt="Portugal" class="w-6 h-4">
+            <span>Portugal</span>
+          </span>
+          <span>3000 customers</span>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="mt-6 bg-blue-900 text-white p-4 flex justify-between">
+    <div>
+      <strong>Swift</strong>
+    </div>
+    <div>Email: caldas@swift.com</div>
+    <div>Location: Porto</div>
+    <div>Contact: +351 930513083</div>
+  </footer>
+
+  <script>
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    const salesChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+          label: 'Trips',
+          data: [500, 1200, 900, 2000],
+          borderColor: '#2563eb',
+          backgroundColor: 'rgba(37, 99, 235, 0.1)',
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
